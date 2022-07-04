@@ -11,7 +11,7 @@ class Post(models.Model):
     slug = models.SlugField(null=True, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_author")
     updated_on = models.DateTimeField(auto_now=True)
-    content = CKEditor5Field('Text', config_name='extends')
+    content = models.TextField(max_length=2500)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(max_length=150)
     created_on = models.DateTimeField(default=datetime.datetime.now)
