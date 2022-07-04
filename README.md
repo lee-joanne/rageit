@@ -42,7 +42,21 @@
 
 ### Data Model
 
-- Data model has been created using the program Whimsical [View](documentation/datamodel.png).
+- Data model has been created using the program Whimsical
+- ![Screenshot of Data Model](documentation/datamodel.png)
+
+### Wireframes
+
+- Wireframes have been created using the program Whimsical
+
+    - Mobile: 
+        ![Screenshot of Mobile Wireframe](documentation/wireframes/mobile_wireframe.png)
+
+    - Tablet: 
+        ![Screenshot of Tablet Wireframe](documentation/wireframes/tablet_wireframe.png)
+
+    - Desktop:
+        ![Screenshot of Desktop Wireframe](documentation/wireframes/desktop_wireframe.png)
 
 ## Features
 
