@@ -16,6 +16,8 @@ class Post(models.Model):
     excerpt = models.TextField(max_length=150)
     created_on = models.DateTimeField(default=datetime.datetime.now)
     #likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    #prepopulated_slug_fields = {'slug': Post.title}
+    # prepopulated_excerpt_fields = {'excerpt': Post.content}
 
     class Meta:
         ordering = ['-created_on']
