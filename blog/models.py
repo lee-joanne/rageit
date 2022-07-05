@@ -19,7 +19,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     def get_absolute_url(self):
-        return f"{self.author}/{self.slug}"
+        return f"/post/{self.slug}"
 
     class Meta:
         ordering = ['-created_on']
@@ -54,4 +54,4 @@ class Comment(models.Model):
     
     def __str__(self):
         """String for representing Post object in admin"""
-        return f"Comment {self.content} written by {self.author}"
+        return f"Comment by {self.author}"
