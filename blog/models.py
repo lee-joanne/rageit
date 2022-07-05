@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from tinymce.models import HTMLField
 import datetime
 
 class Post(models.Model):
@@ -11,13 +12,14 @@ class Post(models.Model):
     slug = models.SlugField(null=True, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_author")
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField(max_length=2500)
+    content = HTMLField()
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(max_length=150)
     created_on = models.DateTimeField(default=datetime.datetime.now)
     #likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    #prepopulated_slug_fields = {'slug': Post.title}
-    # prepopulated_excerpt_fields = {'excerpt': Post.content}
+
+    def get_absolute_url(self):
+        return f"{self.author}/{self.slug}"
 
     class Meta:
         ordering = ['-created_on']
