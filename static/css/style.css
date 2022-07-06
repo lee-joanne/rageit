@@ -1,0 +1,18 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Neuton:wght@200&display=swap');
+/*
+red font: #a3333d
+
+
+*/
+
+h1,
+h2,
+h3 {
+    font-family: 'Neuton', serif;
+    color: white;
+}
+
+p {
+    font-family: 'Manrope', sans-serif;
+}
