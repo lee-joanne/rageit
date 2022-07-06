@@ -1,4 +1,4 @@
 from django.shortcuts import render
-from .models import Post
+from django.views import generic
+from .models import Post, Comment
 
-# Create your views here.
