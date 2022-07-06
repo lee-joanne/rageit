@@ -1,18 +1,43 @@
 /* Google Fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Neuton:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Oswald:wght@300&display=swap');
 /*
-red font: #a3333d
-
+red font: #5F021F;
 
 */
 
 h1,
 h2,
 h3 {
-    font-family: 'Neuton', serif;
-    color: white;
+    font-family: 'Oswald', sans-serif;
+    color: #5F021F;
 }
 
 p {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Heebo', sans-serif;
+}
+
+nav a {
+    color: #5F021F !important;
+    font-family: 'Heebo', sans-serif;
+    font-size: 120%;
+}
+
+nav a:hover {
+    color: white !important;
+}
+
+footer a:hover {
+    color: #5F021F !important;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #5F021F;
+    font-family: 'Heebo', sans-serif !important;
 }
