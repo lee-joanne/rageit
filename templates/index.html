@@ -8,9 +8,28 @@
 
 <!-- Blog posts -->
 
-<div>
+<div class="container-fluid">
+    <div class="row my-4">
+        {% for post in post_list %}
 
+        <div class="col-md-6 col-xs-12">
+            <div class="p-3 mx-3">
+                <div class="card shadow-sm">
+                    <img class="card-img-top"
+                        src="https://media.istockphoto.com/photos/cat-with-blue-eyes-looks-at-camera-picture-id1067347086?k=20&m=1067347086&s=612x612&w=0&h=Wxch207ChCoqnlqa5zvuy17J_YyApm42L6rUN3hml54="
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                        <span>{{ post.number_of_likes }}</span>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}
