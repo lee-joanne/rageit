@@ -11,17 +11,18 @@
 <div class="container-fluid">
     <div class="row my-4">
         {% for post in post_list %}
-
-        <div class="col-md-6 col-xs-12">
-            <div class="p-3 mx-3">
-                <div class="card shadow-sm">
+        <div class="col-sm-6 col-xs-12">
+            <div class="p-3 mx-1 d-flex justify-content-center">
+                <div class="card shadow-sm" style="width: 85%;">
                     <img class="card-img-top"
                         src="https://media.istockphoto.com/photos/cat-with-blue-eyes-looks-at-camera-picture-id1067347086?k=20&m=1067347086&s=612x612&w=0&h=Wxch207ChCoqnlqa5zvuy17J_YyApm42L6rUN3hml54="
                         alt="Card image cap">
                     <div class="card-body">
                         <a class="card-title" href="#">{{ post.title }}</a>
                         <p id="excerpt-autofill" class="card-text">{{ post.excerpt }}</p>
-                        <span>{{ post.number_of_likes }} <i class="fa-solid fa-face-angry"></i></span>
+                        <p class="mb-0">Posted on {{ post.created_on }}</p>
+                        <p class="mb-0"><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} raged</p>
+                        <p class="mb-0"><i class="fa-solid fa-comment"></i> commented</p>
                     </div>
 
                 </div>
