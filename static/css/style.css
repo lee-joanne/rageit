@@ -49,3 +49,12 @@ footer {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
+
+.card-body>a {
+    color: black !important;
+    font-size: 110%;
+}
+
+.card-body>a:hover {
+    color: #5F021F !important;
+}
