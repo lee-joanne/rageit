@@ -7,7 +7,6 @@
 </div>
 
 <!-- Blog posts -->
-
 <div class="container-fluid">
     <div class="row my-4">
         {% for post in post_list %}
@@ -15,16 +14,20 @@
             <div class="p-3 mx-1 d-flex justify-content-center">
                 <div class="card shadow-sm" style="width: 85%;">
                     <img class="card-img-top"
-                        src="https://media.istockphoto.com/photos/cat-with-blue-eyes-looks-at-camera-picture-id1067347086?k=20&m=1067347086&s=612x612&w=0&h=Wxch207ChCoqnlqa5zvuy17J_YyApm42L6rUN3hml54="
+                        src="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"
                         alt="Card image cap">
                     <div class="card-body">
                         <a class="card-title" href="#">{{ post.title }}</a>
                         <p id="excerpt-autofill" class="card-text">{{ post.excerpt }}</p>
-                        <p class="mb-0">Posted on {{ post.created_on }}</p>
+                        <p class="mb-0">Posted by {{post.author}} on {{ post.created_on }}</p>
                         <p class="mb-0"><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} raged</p>
                         <p class="mb-0"><i class="fa-solid fa-comment"></i> commented</p>
+                        {% if post.revised_is_true == True %}
+                        <p class="mb-0"><small class="text-muted"></i> Revised on {{ post.revised_on }} </small></p>
+                        {% else %}
+                        NONE
+                        {% endif %}
                     </div>
-
                 </div>
             </div>
         </div>

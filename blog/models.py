@@ -33,6 +33,13 @@ class Post(models.Model):
 
     def number_of_comments(self):
         return self.post_comments.count()
+    
+    def revised_is_true(self):
+        if self.post.revised_on != self.post.created_on:
+            return True
+        else:
+            return False
+
 
 class Comment(models.Model):
     """
