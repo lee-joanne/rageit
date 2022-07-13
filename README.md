@@ -8,31 +8,31 @@
 
 - Users: 
 
-    1. As a **user** I can **view a paginated list of posts with the newest at the top and oldest at the bottom** so that **I can view content that is available in the blog with the most recent first.**
+    1. As a **user** I can **view posts on the main page with the excerpt** so that **I can quickly read which post seems interesting to me before clicking on it and reading further.**
 
-    2. As a **user** I can **view posts on the main page with the excerpt** so that **I can quickly read which post seems interesting to me before clicking on it and reading further.**
+    2. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
 
-    3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
+    3. As a **user** I can **create posts** so that **I can share my own rage-worthy posts.**
 
-    4. As a **user** I can **create posts** so that **I can share my own rage-worthy posts.**
+    4. As a **user** I can **share photos in my posts** so that **I can add photographic evidence or add context to my rage-worthy posts.**
 
-    5. As a **user** I can **share photos in my posts** so that **I can add photographic evidence or add context to my rage-worthy posts.**
+    5. As a **user** I can **make comments on posts** so that **I can share my thoughts on other people's rage-worthy posts.**
 
-    6. As a **user** I can **make comments on posts** so that **I can share my thoughts on other people's rage-worthy posts.**
+    6. As a **user** I can **share photos in the comments section* so that **I can add photographic context to my comments.**
 
-    7. As a **user** I can **share photos in the comments section* so that **I can add photographic context to my comments.**
+    7. As a **user** I can **revise my posts** so that **I can make any changes if needed.**
 
-    8. As a **user** I can **revise my posts** so that **I can make any changes if needed.**
+    8. As a **user** I can **revise my comments** so that **I can make any changes if needed.**
 
-    9. As a **user** I can **revise my comments** so that **I can make any changes if needed.**
+    9. As a **user** I can **delete my posts** so that **I have the freedom to remove any posts I no longer want to be shared.**
 
-    10. As a **user** I can **delete my posts** so that **I have the freedom to remove any posts I no longer want to be shared.**
+    10. As a **user** I can **delete my comments** so that **I have the freedom to remove any comments I no longer want to be shown.**
 
-    11. As a **user** I can **delete my comments** so that **I have the freedom to remove any comments I no longer want to be shown.**
+    11. As a **user** I can **easily log out** so that **I can have more security on my account.**
 
-    12. As a **user** I can **easily log out** so that **I can have more security on my account.**
+    12. As a **user** I can **easily log in** so that **I can quickly post or add more comments if I wish.**
 
-    13. As a **user** I can **easily log in** so that **I can quickly post or add more comments if I wish.**
+    13. As a **user** I can **easily see how many posts or comments each post has in the homepage** so that **I can see which posts are popular or have the most comments if I wanted to read the most popular posts.**
 
 - Site Admin: 
 

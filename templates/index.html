@@ -17,11 +17,13 @@
                         src="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"
                         alt="Card image cap">
                     <div class="card-body">
-                        <a id="post-title" class="card-title" href="#">{{ post.title }}</a>
-                        <p id="excerpt-autofill" class="card-text">{{ post.excerpt }}</p>
-                        <p class="mb-0">Posted by {{post.author}} on {{ post.created_on }}</p>
-                        <p class="mb-0"><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} raged</p>
-                        <p class="mb-0"><i class="fa-solid fa-comment"></i> {{ post.number_of_comments }} commented</p>
+                        <a class="card-title" href="#">{{ post.title }}</a>
+                        <p class="mb-1">{{ post.content|truncatechars:200 | safe }}</p>
+                        <p class="mb-0"><small>Posted by {{post.author}} on {{ post.created_on }}</small></p>
+                        <p class="mb-0"><small><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }}
+                                raged</small></p>
+                        <p class="mb-0"><small><i class="fa-solid fa-comment"></i> {{ post.number_of_comments }}
+                                commented</small></p>
                     </div>
                 </div>
             </div>

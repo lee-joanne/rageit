@@ -12,5 +12,6 @@ class HomepageView(ListView):
     template_name = 'index.html'
 
 
-class PostView():
-    pass
+class PostDetailedView(DetailView):
+    model = Post
+    template_name = 'post_detailed_view.html'
