@@ -12,8 +12,8 @@ class HomepageView(ListView):
     model = Post
     queryset = Post.objects.order_by('-created_on')
     template_name = 'index.html'
-    created_date = datetime.strptime(Post.created_on, "%d %B, %Y")
-    revised_date = datetime.strptime(Post.revised_on, "%d %B, %Y")
+    created_date = datetime.strftime(Post.created_on, "%d %B, %Y")
+    revised_date = datetime.strftime(Post.revised_on, "%d %B, %Y")
 
 
 class PostView():
