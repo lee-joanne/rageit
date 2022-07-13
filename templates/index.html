@@ -21,11 +21,11 @@
                         <p id="excerpt-autofill" class="card-text">{{ post.excerpt }}</p>
                         <p class="mb-0">Posted by {{post.author}} on {{ post.created_on }}</p>
                         <p class="mb-0"><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} raged</p>
-                        <p class="mb-0"><i class="fa-solid fa-comment"></i> commented</p>
+                        <p class="mb-0"><i class="fa-solid fa-comment"></i>{{ post.post_comments_set }} commented</p>
                         {% if post.revised_is_true == True %}
                         <p class="mb-0"><small class="text-muted"></i> Revised on {{ post.revised_on }} </small></p>
                         {% else %}
-                        NONE
+                        Placeholder text to see if this works
                         {% endif %}
                     </div>
                 </div>
