@@ -42,7 +42,7 @@ footer {
 }
 
 .homepage-banner {
-    background-color: #5F021F;
+    background-color: #5F021F !important;
 }
 
 .card-title {
