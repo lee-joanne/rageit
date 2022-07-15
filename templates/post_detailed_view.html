@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
     <div class="row d-flex justify-content-center p-4">
-        <div class="homepage-banner border rounded w-50 text-white">
+        <div class="mainpost-container homepage-banner border rounded text-white w-50">
             <div>
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
@@ -13,12 +13,31 @@
                 <h2 class="mb-3">{{ post.title }}</h2>
             </div>
             <div>
-                <img src="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"
-                    alt="Card image">
+                <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGhvdG98ZW58MHx8MHx8&w=1000&q=80"
+                    alt="Card image" class="img-fluid">
+                <p><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
+                    {{ post.number_of_comments }}</p>
                 <p>{{ post.content | safe }}</p>
             </div>
         </div>
     </div>
+</div>
+
+<div>
+    <h3>Comments: </h3>
+    {% for comment in post_comment %}
+    <div>
+        <p>
+            {{ comment.author }} on {{ comment.created_on }} wrote:
+        </p>
+        <p>
+            {{ comment.content | safe }}
+        </p>
+        {% if not comment %}
+        <p>It's lonely here</p>
+        {% endif %}
+    </div>
+    {% endfor %}
 </div>
 
 

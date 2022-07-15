@@ -19,7 +19,7 @@ class PostDetailedView(DetailView):
     def get(self, request, slug):
         queryset = Post.objects
         post = get_object_or_404(queryset, slug=slug)
-        # comments = post.comments.order_by('created_on')
+        post_comment = post.post_comment.order_by('created_on')
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -27,6 +27,6 @@ class PostDetailedView(DetailView):
         return render(request, 'post_detailed_view.html', {
             'post': post,
             'slug': slug,
-            # 'comments': comments,
+            'post_comment': post_comment,
             'liked': liked,
         })

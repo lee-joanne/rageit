@@ -1,9 +1,5 @@
 /* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Permanent+Marker&display=swap');
-/*
-red font: #5F021F;
-
-*/
 
 h1 {
     font-family: 'Permanent Marker', sans-serif;
@@ -11,6 +7,7 @@ h1 {
 }
 
 h2,
+h3,
 p {
     font-family: 'Oswald', sans-serif;
 }
@@ -57,4 +54,10 @@ footer {
 
 .card-body>a:hover {
     color: #5F021F !important;
+}
+
+@media screen and (max-width: 900px) {
+    .mainpost-container {
+        width: 50% !important;
+    }
 }
