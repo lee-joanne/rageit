@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row pt-1 p-5">
-        <div class="homepage-banner border rounded text-white col-sm-8 col-xs-12">
+        <div class="homepage-banner border rounded text-white col-md-8 col-sm-12">
             <div>
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
@@ -25,12 +25,13 @@
                 <p>{{ post.content | safe }}</p>
             </div>
         </div>
-        <div class="col-sm-4 col-xs-12 border rounded">
+        <div class="col-md-4 col-sm-12">
             <h3 class="text-center">Comments Section: </h3>
             {% if post_comment|length >= 1 %}
             {% for comment in post_comment %}
-            <div>
-                <p>{{ comment.author }} on {{ comment.created_on }} wrote:</p>
+            <div class="border shadow-sm p-2">
+                <h3><i class="fa-solid fa-user"></i> {{ comment.author }}</h3>
+                <p><small>{{ comment.created_on }}</small></p>
                 <p>{{ comment.content | safe }}</p>
             </div>
             {% endfor %}
