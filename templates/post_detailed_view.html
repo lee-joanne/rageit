@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<div class="container w-auto d-flex justify-content-center">
-    <div class="row p-4">
-        <div class="homepage-banner border rounded text-white">
+<div class="container">
+    <div class="row pt-1 p-5">
+        <div class="homepage-banner border rounded text-white col-sm-8 col-xs-12">
             <div>
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
-                {% if post.has_been_revised %}
+                {% if is_revised %}
                 <p class="mb-0"><small><i class="fa-solid fa-pen-to-square"></i> Last updated
                         {{ post.revised_on }}</small></p>
                 {% endif %}
@@ -18,29 +18,27 @@
                 {% if "placeholder" in post.featured_image.url %}
                 <img class="img-fluid" src="https://i.imgflip.com/4f1odp.png">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" alt="Card image" class="img-fluid">
+                <img src="{{ post.featured_image.url }}" alt="Card image" class="img-fluid card-img">
                 {% endif %}
                 <p><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
                     {{ post.number_of_comments }}</p>
                 <p>{{ post.content | safe }}</p>
             </div>
         </div>
+        <div class="col-sm-4 col-xs-12 border rounded">
+            <h3 class="text-center">Comments Section: </h3>
+            {% if post_comment|length >= 1 %}
+            {% for comment in post_comment %}
+            <div>
+                <p>{{ comment.author }} on {{ comment.created_on }} wrote:</p>
+                <p>{{ comment.content | safe }}</p>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>It's lonely here...<i class="fa-solid fa-face-sad-tear"></i></p>
+            {% endif %}
+        </div>
     </div>
 </div>
-
-<div>
-    <h3>Comments: </h3>
-    {% for comment in post_comment %}
-    <div>
-        {% if comment|length >= 1 %}
-        <p>{{ comment.author }} on {{ comment.created_on }} wrote:</p>
-        <p>{{ comment.content | safe }}</p>
-        {% else %}
-        <p>It's lonely here</p>
-        {% endif %}
-    </div>
-    {% endfor %}
-</div>
-
 
 {% endblock %}

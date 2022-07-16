@@ -13,11 +13,11 @@ class Post(models.Model):
     title = models.CharField(max_length=250, null=False, blank=False, unique=True)
     slug = models.SlugField(null=False, unique=True, max_length=150)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_author")
-    revised_on = models.DateTimeField(auto_now=True)
     content = HTMLField()
     featured_image = CloudinaryField('image', default='placeholder')
-    created_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    revised_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         """
@@ -56,15 +56,6 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
-    
-    def has_been_revised(self):
-        """
-        Function to check if post has been revised
-        """
-        self.revised_date = self.revised_on.strftime("%d-%m-%Y")
-        self.created_date = self.created_on.strftime("%d-%m-%Y")
-        if self.revised_date != self.created_date:
-            return True
 
 
 class Comment(models.Model):

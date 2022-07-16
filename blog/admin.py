@@ -5,7 +5,7 @@ class PostAdmin(admin.ModelAdmin):
     """
     Class to prepopulate slug field. Taken from this website: https://learndjango.com/tutorials/django-slug-tutorial
     """
-    list_display = ("title", "content",)
+    list_display = ("title", "content", "created_on", "revised_on")
     prepopulated_fields = {"slug": ("title",)}
 
 admin.site.register(Post, PostAdmin)

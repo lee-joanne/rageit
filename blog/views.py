@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import ListView, View
 from django.views.generic.detail import DetailView
 from .models import Post
+from datetime import datetime
 
 class HomepageView(ListView):
     '''
@@ -29,4 +30,5 @@ class PostDetailedView(DetailView):
             'slug': slug,
             'post_comment': post_comment,
             'liked': liked,
+            'is_revised': post.created_on != post.revised_on,
         })
