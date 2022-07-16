@@ -15,8 +15,11 @@
                 <h2 class="mb-3">{{ post.title }}</h2>
             </div>
             <div>
-                <img src="https://i.natgeofe.com/n/f0dccaca-174b-48a5-b944-9bcddf913645/01-cat-questions-nationalgeographic_1228126_4x3.jpg"
-                    alt="Card image" class="img-fluid">
+                {% if "placeholder" in post.featured_image.url %}
+                <img class="img-fluid" src="https://i.imgflip.com/4f1odp.png">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" alt="Card image" class="img-fluid">
+                {% endif %}
                 <p><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
                     {{ post.number_of_comments }}</p>
                 <p>{{ post.content | safe }}</p>
