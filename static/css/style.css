@@ -18,12 +18,12 @@ nav a {
     font-size: 120%;
 }
 
-nav a:hover {
-    color: white !important;
+.username_navlink {
+    color: black !important;
 }
 
-footer a:hover {
-    color: #5F021F !important;
+nav a:hover {
+    color: white !important;
 }
 
 a:hover,
@@ -40,6 +40,10 @@ footer {
 
 .homepage-banner {
     background-color: #5F021F !important;
+}
+
+.username_nav {
+    color: black !important;
 }
 
 .card-title {

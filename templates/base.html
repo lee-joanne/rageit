@@ -35,11 +35,6 @@
                 <a class="navbar-brand" href="{% url 'homepage' %}" aria-label="Returns to the main homepage">
                     <h1>RAGEit</h1>
                 </a>
-                {% if user.is_authenticated %}
-                <span>
-                    <p class="m-0"><i class="fa-solid fa-user"></i> Logged in as {{ user.username }}</p>
-                </span>
-                {% endif %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +43,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link disabled username_navlink" aria-current="page"
+                                aria-label="Your username listed here" href="#">
+                                <i class="fa-solid fa-user"></i> Hi, {{ user.username }}</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" aria-label="Link to create a new post" href="#">
                                 Create a New Post</a>
