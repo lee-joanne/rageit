@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
 from tinymce.models import HTMLField
-import datetime
+from datetime import datetime
 from django.template.defaultfilters import slugify
 
 class Post(models.Model):
@@ -56,6 +56,15 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+    
+    def has_been_revised(self):
+        """
+        Function to check if post has been revised
+        """
+        self.revised_date = self.revised_on.strftime("%d-%m-%Y")
+        self.created_date = self.created_on.strftime("%d-%m-%Y")
+        if self.revised_date != self.created_date:
+            return True
 
 
 class Comment(models.Model):

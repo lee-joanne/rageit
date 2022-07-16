@@ -8,7 +8,7 @@
             <div>
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
-                {% if post.revised_on != post.created_on %}
+                {% if post.has_been_revised %}
                 <p class="mb-0"><small><i class="fa-solid fa-pen-to-square"></i> Last updated
                         {{ post.revised_on }}</small></p>
                 {% endif %}
