@@ -2,18 +2,20 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row d-flex justify-content-center p-4">
-        <div class="mainpost-container homepage-banner border rounded text-white w-50">
+<div class="container w-auto d-flex justify-content-center">
+    <div class="row p-4">
+        <div class="homepage-banner border rounded text-white">
             <div>
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
+                {% if post.revised_on != post.created_on %}
                 <p class="mb-0"><small><i class="fa-solid fa-pen-to-square"></i> Last updated
                         {{ post.revised_on }}</small></p>
+                {% endif %}
                 <h2 class="mb-3">{{ post.title }}</h2>
             </div>
             <div>
-                <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGhvdG98ZW58MHx8MHx8&w=1000&q=80"
+                <img src="https://i.natgeofe.com/n/f0dccaca-174b-48a5-b944-9bcddf913645/01-cat-questions-nationalgeographic_1228126_4x3.jpg"
                     alt="Card image" class="img-fluid">
                 <p><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
                     {{ post.number_of_comments }}</p>
@@ -27,13 +29,10 @@
     <h3>Comments: </h3>
     {% for comment in post_comment %}
     <div>
-        <p>
-            {{ comment.author }} on {{ comment.created_on }} wrote:
-        </p>
-        <p>
-            {{ comment.content | safe }}
-        </p>
-        {% if not comment %}
+        {% if comment|length >= 1 %}
+        <p>{{ comment.author }} on {{ comment.created_on }} wrote:</p>
+        <p>{{ comment.content | safe }}</p>
+        {% else %}
         <p>It's lonely here</p>
         {% endif %}
     </div>

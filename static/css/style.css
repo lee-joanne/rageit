@@ -55,9 +55,3 @@ footer {
 .card-body>a:hover {
     color: #5F021F !important;
 }
-
-@media screen and (max-width: 900px) {
-    .mainpost-container {
-        width: 50% !important;
-    }
-}
