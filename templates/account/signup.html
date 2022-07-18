@@ -11,9 +11,19 @@
     <div class="homepage-banner border rounded text-white p-5 col-md-6 col-xs-12">
       <div class="text-center">
         <h2>{% trans "Join us! Sign up" %}</h2>
-        <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
-            in</a>.{% endblocktrans %}
+        <p class="m-0">{% blocktrans %}Already have an account? Then please <a
+            href="{{ login_url }}">login</a>{% endblocktrans %}
         </p>
+        <p>Hover over the arrow to see our sign up views <span id="signup-hover"><i
+              class="fa-solid fa-circle-arrow-down"></i></span></p>
+        <div id="signup-message" class="hide">
+          <p>Here at RAGEit, we value privacy and staying anonymous. Therefore, we will never ask you
+            to sign up with a mandatory email address. We want you to be able to have full
+            anonymity while being part of
+            our community. Therefore, you can create as many accounts as you want post freely without any personal ties
+            to our website. Adding an email address will forever remain optional. Be free, ragers. <i
+              class="fa-solid fa-hand-fist"></i></p>
+        </div>
       </div>
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}

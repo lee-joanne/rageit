@@ -29,6 +29,10 @@ a:active {
     text-decoration: none;
 }
 
+.hide {
+    display: none;
+}
+
 .homepage-banner {
     background-color: #5F021F !important;
 }
@@ -38,7 +42,7 @@ a:active {
     background-color: white !important;
 }
 
-.username_nav {
+.username_navlink {
     color: black !important;
 }
 
