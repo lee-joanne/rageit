@@ -30,5 +30,5 @@ class PostDetailedView(DetailView):
             'slug': slug,
             'post_comment': post_comment,
             'liked': liked,
-            'is_revised': post.created_on != post.revised_on,
+            'is_revised': post.created_on.strftime("%d, %m, %y") != post.revised_on.strftime("%d, %m, %y"),
         })
