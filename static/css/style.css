@@ -12,6 +12,10 @@ p {
     font-family: 'Oswald', sans-serif;
 }
 
+body {
+    padding-top: 70px;
+}
+
 nav a {
     color: #5F021F !important;
     font-family: 'Oswald', sans-serif;
