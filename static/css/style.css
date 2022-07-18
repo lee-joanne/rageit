@@ -18,10 +18,6 @@ nav a {
     font-size: 120%;
 }
 
-.username_navlink {
-    color: black !important;
-}
-
 nav a:hover {
     color: white !important;
 }
@@ -33,13 +29,13 @@ a:active {
     text-decoration: none;
 }
 
-footer {
-    background-color: #5F021F;
-    font-family: 'Oswald', sans-serif !important;
-}
-
 .homepage-banner {
     background-color: #5F021F !important;
+}
+
+.btn-hover-style:hover {
+    color: #5F021F !important;
+    background-color: white !important;
 }
 
 .username_nav {
