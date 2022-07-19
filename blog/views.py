@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import ListView, View
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
 from datetime import datetime
+
 
 class HomepageView(ListView):
     '''
@@ -32,3 +35,9 @@ class PostDetailedView(DetailView):
             'liked': liked,
             'is_revised': post.created_on.strftime("%d, %m, %y") != post.revised_on.strftime("%d, %m, %y"),
         })
+
+
+class CreatePostView(LoginRequiredMixin, CreateView):
+    model = Post
+    template_name = 'create_post.html'
+    fields = ['title', 'content']
