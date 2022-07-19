@@ -3,18 +3,31 @@
 {% block content %}
 
 <div class="container">
-    <div class="row d-flex justify-content-center m-5">
+    <div class="row d-flex justify-content-center">
         <div class="homepage-banner border rounded text-white p-5 col-md-6 col-xs-12 shadow">
-            <div class="text-center ">
+            <div class="text-center">
                 <h2><i class="fa-solid fa-face-angry"></i> What pissed you off today?</h2>
             </div>
             <hr>
+            <!-- Create Post Form -->
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <!-- Using the formset -->
-                {{ form.as_p }}
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="post_title" placeholder="Post title" name="post_title"
+                        required>
+                    <label for="post_title"></label>
+                </div>
+                <div>
+                    <textarea class="form-control" placeholder="Rage it" id="post_content" name="post_content"
+                        style="height: 200px"></textarea>
+                    <label for="post_content"></label>
+                </div>
+                <div class="mb-4">
+                    <label for="post_image" class="form-label">Feel free to a photo!</label>
+                    <input class="form-control" type="file" id="post_image" name="post_image">
+                </div>
                 <div class="text-center">
-                    <input class="btn border text-white btn-hover-style" type="submit" value="Release the anger">
+                    <input class="btn border text-white btn-hover-style" type="submit" value="Release the anger!">
                 </div>
             </form>
         </div>

@@ -40,4 +40,4 @@ class PostDetailedView(DetailView):
 class CreatePostView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'create_post.html'
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'featured_image']
