@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.urls import reverse
 from cloudinary.models import CloudinaryField
-from tinymce.models import HTMLField
 from datetime import datetime
 from django.template.defaultfilters import slugify
 
@@ -13,7 +11,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250, null=False, blank=False, unique=True)
     slug = models.SlugField(null=False, unique=True, max_length=150)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_author")
-    content = HTMLField()
+    content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -64,7 +62,7 @@ class Comment(models.Model):
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="post_comment")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comment_author")
-    content = HTMLField()
+    content = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
     revised_on = models.DateTimeField(auto_now=True)
     featured_image = CloudinaryField('image', default='placeholder')

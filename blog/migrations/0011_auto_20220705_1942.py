@@ -5,7 +5,6 @@ import datetime
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import tinymce.models
 
 
 class Migration(migrations.Migration):
@@ -33,7 +32,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='comment',
             name='content',
-            field=tinymce.models.HTMLField(default=1),
+            field=models.TextField(),
             preserve_default=False,
         ),
         migrations.AddField(

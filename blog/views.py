@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
+from .forms import PostForm
 from datetime import datetime
 
 
@@ -17,6 +18,9 @@ class HomepageView(ListView):
 
 
 class PostDetailedView(DetailView):
+    """
+    Class-based view to show detailed view of individual posts
+    """
     model = Post
     template_name = 'post_detailed_view.html'
 
@@ -38,6 +42,15 @@ class PostDetailedView(DetailView):
 
 
 class CreatePostView(LoginRequiredMixin, CreateView):
+    """
+    Class-based for users to create new posts and have it saved
+    """
+    login_url = '/accounts/login/'
     model = Post
     template_name = 'create_post.html'
-    fields = ['title', 'content', 'featured_image']
+    form_class = PostForm
+    success_url = "/"
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)

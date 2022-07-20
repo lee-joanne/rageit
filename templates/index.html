@@ -22,7 +22,9 @@
                     <div class="card-body">
                         <a class="card-title" href="{% url 'post_detailed_view' post.slug %}">{{ post.title }}</a>
                         <p class="mb-1">{{ post.content|truncatechars:200 | safe }}</p>
-                        <p class="mb-0"><small>Posted by {{post.author}} on {{ post.created_on }}</small></p>
+                        <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{post.author}} on
+                                {{ post.created_on }}</small>
+                        </p>
                         <p class="mb-0"><small><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }}
                                 raged</small></p>
                         <p class="mb-0"><small><i class="fa-solid fa-comment"></i> {{ post.number_of_comments }}
