@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{ form.errors }}
 
 <div class="container">
     <div class="row d-flex justify-content-center">
@@ -11,10 +10,11 @@
             </div>
             <hr>
             <!-- Create Post Form -->
-            <form method="POST" enctype="multipart/form-data" onsubmit="postMade()">
+            {{ form.errors }}
+            <form method="POST" enctype="multipart/form-data" onsubmit="postSuccessMessage()">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="post_title" placeholder="Post title" name="title"
+                    <input type="text" class="form-control" id="post_title" placeholder="Title it" name="title"
                         required>
                     <label for="post_title"></label>
                 </div>
@@ -24,11 +24,11 @@
                     <label for="post_content"></label>
                 </div>
                 <div class="mb-4">
-                    <label for="post_image" class="form-label">Feel free to a photo!</label>
+                    <label for="post_image" class="form-label">Image it (if you want)</label>
                     <input class="form-control" type="file" id="post_image" name="featured_image">
                 </div>
                 <div class="text-center">
-                    <input class="btn border text-white btn-hover-style" type="submit" value="Release the anger!">
+                    <input class="btn border text-white btn-hover-style" type="submit" value="Vent it">
                 </div>
             </form>
         </div>

@@ -18,9 +18,7 @@ function hideMessage() {
     signUpMessage.classList.add("hide");
 }
 
-function postMade() {
-    /*
-    Function to show pop up message that user's post is successfully made
-    */
-
+function postSuccessMessage() {
+    let postSuccess = document.getElementById("success-post-alert")
+    postSuccess.classList.remove("hide")
 }
