@@ -37,6 +37,10 @@ a:active {
     display: none;
 }
 
+.edit-links {
+    font-family: 'Oswald', sans-serif !important;
+}
+
 .homepage-banner {
     background-color: #5F021F !important;
 }

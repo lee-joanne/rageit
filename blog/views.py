@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import ListView, View
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
@@ -45,7 +45,7 @@ class PostDetailedView(DetailView):
 
 class CreatePostView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """
-    Class-based for users to create new posts and have it saved
+    Class-based view for users to create new posts and have it saved
     """
     login_url = '/accounts/login/'
     model = Post
@@ -57,3 +57,15 @@ class CreatePostView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
+    """
+    Class-based view for users to be able to edit posts they have made
+    """
+    login_url = '/accounts/login/'
+    model = Post
+    template_name = 'update_post.html'
+    form_class = PostForm
+    success_url = "/"
+    success_message = "Your changes are now updated!"
