@@ -10,7 +10,7 @@
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
                 {% if is_revised %}
-                <p class="mb-0"><small><i class="fa-solid fa-pen-to-square"></i> Last updated
+                <p class="mb-0"><small><i class="fa-solid fa-user-pen"></i> Last updated
                         {{ post.revised_on }}</small></p>
                 {% endif %}
                 {% if user.is_authenticated and user == post.author %}
@@ -38,7 +38,7 @@
                 {% endif %}
                 <p><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
                     {{ post.number_of_comments }}</p>
-                <p>{{ post.content | safe }}</p>
+                <p>{{ post.content | linebreaks }}</p>
             </div>
         </div>
         <!-- Comments Section -->

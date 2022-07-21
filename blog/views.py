@@ -71,7 +71,7 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_message = "Your changes are now updated!"
 
 
-class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
+class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     """
     Class-based view for users to delete their posts
     """
