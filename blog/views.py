@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import ListView, View
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
@@ -69,3 +69,15 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     form_class = PostForm
     success_url = "/"
     success_message = "Your changes are now updated!"
+
+
+class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
+    """
+    Class-based view for users to delete their posts
+    """
+    login_url = '/accounts/login/'
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = "/"
+    success_message = "Your post is successfully deleted"
+

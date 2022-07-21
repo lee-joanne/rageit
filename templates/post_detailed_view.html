@@ -14,9 +14,19 @@
                         {{ post.revised_on }}</small></p>
                 {% endif %}
                 {% if user.is_authenticated and user == post.author %}
-                <small><a class="link-secondary edit-links" aria-label="Edit your post"
-                        href="{% url 'update_post' post.slug %}"><i class="fa-solid fa-pen-to-square"></i> Edit
-                        Post</a></small>
+                <ul class="authorized-user-links">
+                    <li><small><a class="link-secondary" aria-label="Edit your post"
+                                href="{% url 'update_post' post.slug %}"><i class="fa-solid fa-pen-to-square"></i>
+                                Edit
+                                Post</a></small>
+                    </li>
+                    <li><small><a class="link-danger"
+                                aria-label="Delete your post (will ask for confirmation to delete post when clicked)"
+                                href="{% url 'delete_post' post.slug %}"><i class="fa-solid fa-trash-can"></i>
+                                Delete
+                                Post</a></small>
+                    </li>
+                </ul>
                 {% endif %}
                 <h2 class="mb-3">{{ post.title }}</h2>
             </div>

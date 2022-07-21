@@ -16,6 +16,10 @@ body {
     padding-top: 80px;
 }
 
+ul {
+    list-style: none !important;
+}
+
 nav a {
     color: #5F021F !important;
     font-family: 'Oswald', sans-serif;
@@ -37,8 +41,9 @@ a:active {
     display: none;
 }
 
-.edit-links {
+.authorized-user-links {
     font-family: 'Oswald', sans-serif !important;
+    padding: 0;
 }
 
 .homepage-banner {
