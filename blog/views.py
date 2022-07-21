@@ -3,6 +3,8 @@ from django.views.generic import ListView, View
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
 from .forms import PostForm
 from datetime import datetime
@@ -41,7 +43,7 @@ class PostDetailedView(DetailView):
         })
 
 
-class CreatePostView(LoginRequiredMixin, CreateView):
+class CreatePostView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """
     Class-based for users to create new posts and have it saved
     """
@@ -50,6 +52,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     template_name = 'create_post.html'
     form_class = PostForm
     success_url = "/"
+    success_message = "Your post is now live! Check it out!"
 
     def form_valid(self, form):
         form.instance.author = self.request.user
