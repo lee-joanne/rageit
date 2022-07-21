@@ -5,10 +5,13 @@
 <div class="homepage-banner py-3 m-0 text-center">
     <h2 class="text-white">For pissed off people.</h2>
 </div>
-<div class="alert alert-success alert-dismissible fade show text-center hide" id="success-post-alert" role="alert">
-    <strong>Success!</strong> Your post is made, you can view it below.
+<!-- Django Messages -->
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+    {{ message | safe }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
+{% endfor %}
 
 <!-- Blog posts -->
 <div class="container-fluid">

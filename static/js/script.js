@@ -17,8 +17,3 @@ function hideMessage() {
     */
     signUpMessage.classList.add("hide");
 }
-
-function postSuccessMessage() {
-    let postSuccess = document.getElementById("success-post-alert")
-    postSuccess.classList.remove("hide")
-}

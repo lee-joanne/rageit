@@ -11,7 +11,7 @@
             <hr>
             <!-- Create Post Form -->
             {{ form.errors }}
-            <form method="POST" enctype="multipart/form-data" onsubmit="postSuccessMessage()">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mb-3">
                     <input type="text" class="form-control" id="post_title" placeholder="Title it" name="title"
