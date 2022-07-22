@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import ListView, View
+from django.core.exceptions import PermissionDenied
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -70,6 +71,18 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_url = "/"
     success_message = "Your changes are now updated!"
 
+    #Code on url permission access validation is inspired by DamianJacob: https://github.com/Damianjacob
+    def get(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        user = request.user
+        if user.username != post.author:
+            raise PermissionDenied
+        else:
+            return render(request, 'update_post_form.html', {
+                'post': post,
+                'slug': slug
+            })
+
 
 class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     """
@@ -81,3 +94,18 @@ class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     success_url = "/"
     success_message = "Your post is successfully deleted"
 
+    #Code on url permission access validation is inspired by DamianJacob: https://github.com/Damianjacob
+    def get(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        user = request.user
+        if user.username != post.author:
+            raise PermissionDenied
+        else:
+            return render(request, 'delete_post.html', {
+                'post': post,
+                'slug': slug
+            })
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeletePostView, self).delete(request, *args, **kwargs)
