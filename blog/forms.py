@@ -18,4 +18,4 @@ class CommentForm(ModelForm):
     """
     class Meta:
         model = Comment
-        fields = ['content', 'featured_image']
+        fields = ['content', ]

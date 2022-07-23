@@ -18,26 +18,21 @@
 
     5. As a **user** I can **make comments on posts** so that **I can share my thoughts on other people's rage-worthy posts.**
 
-    6. As a **user** I can **share photos in the comments section* so that **I can add photographic context to my comments.**
+    6. As a **user** I can **revise my posts** so that **I can make any changes if needed.**
 
-    7. As a **user** I can **revise my posts** so that **I can make any changes if needed.**
+    7. As a **user** I can **delete my posts** so that **I have the freedom to remove any posts I no longer want to be shared.**
 
-    8. As a **user** I can **revise my comments** so that **I can make any changes if needed.**
+    8. As a **user** I can **delete my comments** so that **I have the freedom to remove any comments I no longer want to be shown.**
 
-    9. As a **user** I can **delete my posts** so that **I have the freedom to remove any posts I no longer want to be shared.**
+    9. As a **user** I can **easily log out** so that **I can have more security on my account.**
 
-    10. As a **user** I can **delete my comments** so that **I have the freedom to remove any comments I no longer want to be shown.**
+    10. As a **user** I can **easily log in** so that **I can quickly post or add more comments if I wish.**
 
-    11. As a **user** I can **easily log out** so that **I can have more security on my account.**
+    11. As a **user** I can **easily see how many posts or comments each post has in the homepage** so that **I can see which posts are popular or have the most comments if I wanted to read the most popular posts.**
 
-    12. As a **user** I can **easily log in** so that **I can quickly post or add more comments if I wish.**
+    12. As a **user** I can **only edit and delete my own posts and view an error message if I tamper with the URL to edit or delete someone else's post** so that **I can have enhanced security and ensure no one tampers with my posts.**
 
-    13. As a **user** I can **easily see how many posts or comments each post has in the homepage** so that **I can see which posts are popular or have the most comments if I wanted to read the most popular posts.**
-
-    14. As a **user** I can **only edit and delete my own posts and view an error message if I tamper with the URL to edit or delete someone else's post** so that **I can have enhanced security and ensure no one tampers with my posts.**
-
-    15. As a **user** I can **receive feedback immediately if I have uploaded an incorrect file or image type** so that **I can immediately know to fix my file or image before submitting a new or edited post or comment.**
-
+    13. As a **user** I can **receive feedback immediately if I have uploaded an incorrect file or image type** so that **I can immediately know to fix my file or image before submitting a new or edited post or comment.**
 
 
 - Site Admin: 

@@ -61,15 +61,9 @@ class Comment(models.Model):
     Comment model class
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="post_comment")
-    author = models.CharField(max_length=50)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comment_author")
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now=True)
-    revised_on = models.DateTimeField(auto_now=True)
-    featured_image = CloudinaryField('image', default='placeholder')
-    comment_likes = models.ManyToManyField(User, related_name='comment_likes', blank=True)
-
-    def number_of_comment_likes(self):
-        return self.comment_likes.count()
+    created_on = models.DateTimeField(auto_now_add=True)
     
     class Meta:
         ordering = ['created_on']

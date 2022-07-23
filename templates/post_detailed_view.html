@@ -56,11 +56,6 @@
                 <p class="m-0"><small>{{ comment.created_on }}</small></p>
                 {% if user.is_authenticated and user == comment.author %}
                 <ul class="authorized-user-links">
-                    <li><small><a class="link-secondary" aria-label="Edit your Comment" href=""><i
-                                    class="fa-solid fa-pen-to-square"></i>
-                                Edit
-                                Comment</a></small>
-                    </li>
                     <li><small><a class="link-danger"
                                 aria-label="Delete your comment (will ask for confirmation to delete comment when clicked)"
                                 href=""><i class="fa-solid fa-trash-can"></i>
@@ -85,14 +80,8 @@
                             name="content" style="height: 200px"></textarea>
                         <label for="comment_content"></label>
                     </div>
-                    <div class="mb-4">
-                        <label for="comment_image" class="form-label">Share an image (if you want. Must be jpeg, jpg, or
-                            png)</label>
-                        <input class="form-control" type="file" id="comment_image" name="featured_image">
-                    </div>
                     <div class="text-center">
-                        <input class="btn border comment-btn text-white" type="submit" value="Submit"
-                            onclick="imageValidate()">
+                        <input class="btn border comment-btn text-white" type="submit" value="Submit">
                     </div>
                 </form>
             </div>

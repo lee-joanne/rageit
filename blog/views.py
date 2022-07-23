@@ -49,11 +49,11 @@ class PostDetailedView(DetailView):
         Function to allow users to create comments in detailed-post view
         """
         post = get_object_or_404(Post, slug=slug)
-        post_comment = post.post_comment.order_by('-created_on')
+        post_comment = post.post_comment.order_by('created_on')
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
-            comment_form.instance.author = request.user.username
+            comment_form.instance.author = self.request.user
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
@@ -68,7 +68,7 @@ class PostDetailedView(DetailView):
                 "slug": slug,
                 'post_comment': post_comment,
                 "commented": True,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
             },
         )
 
