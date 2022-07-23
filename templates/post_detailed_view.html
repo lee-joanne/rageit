@@ -44,6 +44,11 @@
         <!-- Comments Section -->
         <div class="col-md-4 col-sm-12">
             <h3 class="text-center">Comments Section: </h3>
+            {% if commented %}
+            <div class="alert alert-success" role="alert">
+                Your comment is live!
+            </div>
+            {% endif %}
             {% if post_comment|length >= 1 %}
             {% for comment in post_comment %}
             <div class="border shadow-sm p-2 mb-3">
@@ -69,11 +74,6 @@
             {% endfor %}
             {% else %}
             <p class="text-center">It's lonely here...<i class="fa-solid fa-face-sad-tear"></i></p>
-            {% endif %}
-            {% if commented %}
-            <div class="alert alert-success" role="alert">
-                Your comment is live!
-            </div>
             {% endif %}
             {% if user.is_authenticated %}
             <div class="border shadow-sm p-3 m-4">
