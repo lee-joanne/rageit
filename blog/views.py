@@ -6,8 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Post
-from .forms import PostForm
+from .models import Post, Comment
+from .forms import PostForm, CommentForm
 from datetime import datetime
 
 
@@ -39,9 +39,38 @@ class PostDetailedView(DetailView):
             'post': post,
             'slug': slug,
             'post_comment': post_comment,
+            'comment_form': CommentForm(),
             'liked': liked,
             'is_revised': post.created_on.strftime("%d, %m, %y") != post.revised_on.strftime("%d, %m, %y"),
         })
+
+    def post(self, request, slug):
+        """
+        Function to allow users to create comments in detailed-post view
+        """
+        post = get_object_or_404(Post, slug=slug)
+        post_comment = post.post_comment.order_by('created_on')
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment_form.instance.author = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            "post_detailed_view.html",
+            {
+                "post": post,
+                "slug": slug,
+                "comments": post_comment,
+                "commented": True,
+                "comment_form": CommentForm()
+            },
+        )
 
 
 class CreatePostView(SuccessMessageMixin, LoginRequiredMixin, CreateView):

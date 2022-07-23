@@ -24,5 +24,4 @@ function imageValidate() {
     Inspired by code from https://stackoverflow.com/questions/8053394/how-to-do-something-before-on-submit
     as well as: https://stackoverflow.com/questions/21396279/display-image-and-validation-of-image-extension-before-uploading-file-using-java
     */
-
 }

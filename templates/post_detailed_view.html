@@ -46,14 +46,56 @@
             <h3 class="text-center">Comments Section: </h3>
             {% if post_comment|length >= 1 %}
             {% for comment in post_comment %}
-            <div class="border shadow-sm p-2">
+            <div class="border shadow-sm p-2 mb-3">
                 <h3><i class="fa-solid fa-user"></i> {{ comment.author }}</h3>
-                <p><small>{{ comment.created_on }}</small></p>
-                <p>{{ comment.content | safe }}</p>
+                <p class="m-0"><small>{{ comment.created_on }}</small></p>
+                {% if user.is_authenticated and user == comment.author %}
+                <ul class="authorized-user-links">
+                    <li><small><a class="link-secondary" aria-label="Edit your Comment" href=""><i
+                                    class="fa-solid fa-pen-to-square"></i>
+                                Edit
+                                Comment</a></small>
+                    </li>
+                    <li><small><a class="link-danger"
+                                aria-label="Delete your comment (will ask for confirmation to delete comment when clicked)"
+                                href=""><i class="fa-solid fa-trash-can"></i>
+                                Delete
+                                Comment</a></small>
+                    </li>
+                </ul>
+                {% endif %}
+                <p class="mb-2">{{ comment.content | linebreaks }}</p>
             </div>
             {% endfor %}
             {% else %}
             <p class="text-center">It's lonely here...<i class="fa-solid fa-face-sad-tear"></i></p>
+            {% endif %}
+            {% if commented %}
+            <div class="alert alert-success" role="alert">
+                Your comment is live!
+            </div>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="border shadow-sm p-3 m-4">
+                <p class="text-center">Add a Comment?</p>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div>
+                        <textarea class="form-control" placeholder="Add your comment" id="comment_content"
+                            name="content" style="height: 200px"></textarea>
+                        <label for="comment_content"></label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="comment_image" class="form-label">Share an image (if you want. Must be jpeg, jpg, or
+                            png)</label>
+                        <input class="form-control" type="file" id="comment_image" name="featured_image">
+                    </div>
+                    <div class="text-center">
+                        <input class="btn border comment-btn text-white" type="submit" value="Submit"
+                            onclick="imageValidate()">
+                    </div>
+                </form>
+            </div>
             {% endif %}
         </div>
     </div>
