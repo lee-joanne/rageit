@@ -9,10 +9,8 @@
             <div>
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
-                {% if is_revised %}
                 <p class="mb-0"><small><i class="fa-solid fa-user-pen"></i> Last updated
                         {{ post.revised_on }}</small></p>
-                {% endif %}
                 {% if user.is_authenticated and user == post.author %}
                 <ul class="authorized-user-links">
                     <li><small><a class="link-secondary" aria-label="Edit your post"

@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
-from datetime import datetime
+from django.http import HttpResponseRedirect
 
 
 class HomepageView(ListView):
@@ -41,7 +41,6 @@ class PostDetailedView(DetailView):
             'post_comment': post_comment,
             'comment_form': CommentForm(),
             'liked': liked,
-            'is_revised': post.created_on.strftime("%d, %m, %y") != post.revised_on.strftime("%d, %m, %y"),
         })
 
     def post(self, request, slug):
@@ -138,3 +137,21 @@ class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super(DeletePostView, self).delete(request, *args, **kwargs)
+
+
+class PostLike(LoginRequiredMixin, View):
+    """
+    Class-based view for liking/unliking a comment.
+    Code is taken from I Think Therefore I Blog example project.
+    """
+    login_url = '/accounts/login/'
+
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+        
+        return HttpResponseRedirect(reverse('post_detailed_view', args=[slug]))
