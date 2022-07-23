@@ -41,6 +41,12 @@ a:active {
     display: none;
 }
 
+.btn-like {
+    color: white !important;
+    background-color: #5F021F !important;
+    border: none;
+}
+
 .authorized-user-links {
     font-family: 'Oswald', sans-serif !important;
     padding: 0;
@@ -51,14 +57,15 @@ a:active {
     background-color: #5F021F !important;
 }
 
-.btn-hover-style:hover {
+.btn-hover-style:hover,
+.comment-btn:hover {
     color: #5F021F !important;
     background-color: white !important;
 }
 
-.comment-btn:hover {
+.btn-like:hover,
+.card-body>a:hover {
     color: #5F021F !important;
-    background-color: white !important;
 }
 
 .username_navlink {
@@ -73,8 +80,4 @@ a:active {
 .card-body>a {
     color: black !important;
     font-size: 130%;
-}
-
-.card-body>a:hover {
-    color: #5F021F !important;
 }

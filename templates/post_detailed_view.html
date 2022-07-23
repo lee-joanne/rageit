@@ -34,8 +34,26 @@
                 {% else %}
                 <img src="{{ post.featured_image.url }}" alt="Card image" class="img-fluid card-img">
                 {% endif %}
-                <p><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
-                    {{ post.number_of_comments }}</p>
+                <div class="d-inline">
+                    {% if user.is_authenticated and user != post.author %}
+                    <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button type="submit" name="post" value="{{ post.slug }}" class="btn-like"
+                            aria-label="Like the comment! Will disable like if already clicked"><i
+                                class="fa-solid fa-face-angry"></i></button>
+                        {% else %}
+                        <button type="submit" name="post" value="{{ post.slug }}" class="btn-like"
+                            aria-label="Like the comment! Will disable like if already clicked"><i
+                                class="fa-solid fa-face-angry"></i></button>
+                        {% endif %}
+                    </form>
+                    {% else %}
+                    <span class="text-secondary text-white"><i class="fa-solid fa-face-angry"></i></span>
+                    {% endif %}
+                </div>
+                {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
+                {{ post.number_of_comments }}
                 <p>{{ post.content | linebreaks }}</p>
             </div>
         </div>

@@ -141,8 +141,8 @@ class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
 
 class PostLike(LoginRequiredMixin, View):
     """
-    Class-based view for liking/unliking a comment.
-    Code is taken from I Think Therefore I Blog example project.
+    Class-based view for liking/unliking a post
+    Code is taken from the I Think Therefore I Blog example project.
     """
     login_url = '/accounts/login/'
 
