@@ -17,3 +17,12 @@ function hideMessage() {
     */
     signUpMessage.classList.add("hide");
 }
+
+function imageValidate() {
+    /*
+    Function to ensure images match jpeg, jpg, or png before submission.
+    Inspired by code from https://stackoverflow.com/questions/8053394/how-to-do-something-before-on-submit
+    as well as: https://stackoverflow.com/questions/21396279/display-image-and-validation-of-image-extension-before-uploading-file-using-java
+    */
+
+}

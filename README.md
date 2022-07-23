@@ -34,6 +34,12 @@
 
     13. As a **user** I can **easily see how many posts or comments each post has in the homepage** so that **I can see which posts are popular or have the most comments if I wanted to read the most popular posts.**
 
+    14. As a **user** I can **only edit and delete my own posts and view an error message if I tamper with the URL to edit or delete someone else's post** so that **I can have enhanced security and ensure no one tampers with my posts.**
+
+    15. As a **user** I can **receive feedback immediately if I have uploaded an incorrect file or image type** so that **I can immediately know to fix my file or image before submitting a new or edited post or comment.**
+
+
+
 - Site Admin: 
 
     1. As a **site admin** I can **review, create, and delete posts** so that **I can manage my website's main layout and content.**

@@ -71,14 +71,14 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_url = "/"
     success_message = "Your changes are now updated!"
 
-    #Code on url permission access validation is inspired by DamianJacob: https://github.com/Damianjacob
+    #Code on url permission access validation is taken from DamianJacob: https://github.com/Damianjacob
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         user = request.user
-        if user.username != post.author:
+        if str(user.username) != str(post.author):
             raise PermissionDenied
         else:
-            return render(request, 'update_post_form.html', {
+            return render(request, 'update_post.html', {
                 'post': post,
                 'slug': slug
             })
@@ -94,11 +94,11 @@ class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     success_url = "/"
     success_message = "Your post is successfully deleted"
 
-    #Code on url permission access validation is inspired by DamianJacob: https://github.com/Damianjacob
+    #Code on url permission access validation is taken from DamianJacob: https://github.com/Damianjacob
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         user = request.user
-        if user.username != post.author:
+        if str(user.username) != str(post.author):
             raise PermissionDenied
         else:
             return render(request, 'delete_post.html', {
