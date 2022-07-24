@@ -9,6 +9,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.http import HttpResponseRedirect
+import time
+from datetime import datetime, timedelta
 
 
 class HomepageView(ListView):
@@ -41,6 +43,7 @@ class PostDetailedView(DetailView):
             'post_comment': post_comment,
             'comment_form': CommentForm(),
             'liked': liked,
+            'is_revised': post.revised_on - post.created_on > timedelta(seconds=1)
         })
 
     def post(self, request, slug):
