@@ -158,3 +158,15 @@ class PostLike(LoginRequiredMixin, View):
             post.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('post_detailed_view', args=[slug]))
+
+
+class CommentDelete(LoginRequiredMixin, DeleteView):
+    """
+    Class-based view for deleting a comment
+    """
+    login_url = '/accounts/login/'
+    model = Comment
+    template_name = "comment_confirm_delete.html"
+
+    def get_success_url(self):
+        return reverse('post_detailed_view', kwargs={'slug': self.object.post.slug})

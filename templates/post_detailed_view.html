@@ -74,11 +74,9 @@
                 <p class="m-0"><small>{{ comment.created_on }}</small></p>
                 {% if user.is_authenticated and user == comment.author %}
                 <ul class="authorized-user-links">
-                    <li><small><a class="link-danger"
-                                aria-label="Delete your comment (will ask for confirmation to delete comment when clicked)"
-                                href=""><i class="fa-solid fa-trash-can"></i>
-                                Delete
-                                Comment</a></small>
+                    <li><small><a class="link-danger d-inline" href="{% url 'delete_comment' comment.id %}">
+                                <i class="fa-solid fa-trash-can"></i> Delete Comment
+                            </a></small>
                     </li>
                 </ul>
                 {% endif %}
