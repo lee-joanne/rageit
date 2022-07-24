@@ -102,7 +102,8 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_url = "/"
     success_message = "Your changes are now updated!"
 
-    #Code on url permission access validation is taken from DamianJacob: https://github.com/Damianjacob
+    # Code on url permission access validation is taken from 
+    # DamianJacob: https://github.com/Damianjacob
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         user = request.user
@@ -125,7 +126,8 @@ class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     success_url = "/"
     success_message = "Your post is successfully deleted"
 
-    #Code on url permission access validation is taken from DamianJacob: https://github.com/Damianjacob
+    # Code on url permission access validation is taken from 
+    # DamianJacob: https://github.com/Damianjacob
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         user = request.user

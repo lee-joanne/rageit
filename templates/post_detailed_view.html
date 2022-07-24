@@ -52,11 +52,11 @@
                     <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
-                        <button type="submit" name="post" value="{{ post.slug }}" class="btn-like border border-light"
+                        <button type="submit" name="post" value="{{ post.slug }}" class="btn-like rounded-circle border"
                             aria-label="Like the comment! Will disable like if already clicked"><i
                                 class="fa-solid fa-face-angry"></i></button>
                         {% else %}
-                        <button type="submit" name="post" value="{{ post.slug }}" class="btn-like border border-light"
+                        <button type="submit" name="post" value="{{ post.slug }}" class="btn-like rounded-circle border"
                             aria-label="Like the comment! Will disable like if already clicked"><i
                                 class="fa-solid fa-face-angry"></i></button>
                         {% endif %}
@@ -67,7 +67,12 @@
                 </div>
                 {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
                 {{ post.number_of_comments }}
-                {{ post.content | linebreaks }}
+                {% if liked %}
+                <span>You liked this post</span>
+                {% endif %}
+                <div class="mt-4">
+                    {{ post.content | linebreaks }}
+                </div>
             </div>
         </div>
         <!-- Comments Section -->

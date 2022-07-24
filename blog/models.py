@@ -8,7 +8,7 @@ class Post(models.Model):
     """
     Post model class
     """
-    title = models.CharField(max_length=250, null=False, blank=False, unique=True)
+    title = models.CharField(max_length=150, null=False, blank=False, unique=True)
     slug = models.SlugField(null=False, unique=True, max_length=150)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_author")
     content = models.TextField()

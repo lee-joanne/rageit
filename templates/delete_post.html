@@ -8,7 +8,7 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="text-center">
-                    <h2>Are you sure you want to delete your post "{{ post.title }}"?</h2>
+                    <h2 class="text-break">Are you sure you want to delete your post "{{ post.title }}"?</h2>
                     <br>
                     <input class="btn border text-white btn-hover-style" type="submit" value="Yes, good riddance">
                 </div>

@@ -115,8 +115,6 @@
     14. Scroll down and select **Deploy Branch** next to **Manual Deploy**. Ensure the branch to deploy is master/main. 
     15. Deployment gets created and live link is then previewed. 
 
-[View live project here](https://pirate-ship54.herokuapp.com/)
-
 ## Credits
 
 ### Code
