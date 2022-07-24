@@ -154,8 +154,10 @@ class PostLike(LoginRequiredMixin, View):
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
+            messages.success(self.request, '<i class="fa-solid fa-heart-crack"></i> You unraged this post', extra_tags="post_like")
         else:
             post.likes.add(request.user)
+            messages.success(self.request, '<i class="fa-solid fa-face-angry"></i> You raged this post', extra_tags="post_like")
         
         return HttpResponseRedirect(reverse('post_detailed_view', args=[slug]))
 
@@ -169,4 +171,5 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
     template_name = "comment_confirm_delete.html"
 
     def get_success_url(self):
+        messages.success(self.request, 'Comment successfully deleted', extra_tags="comment_deleted")
         return reverse('post_detailed_view', kwargs={'slug': self.object.post.slug})
