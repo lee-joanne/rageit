@@ -5,7 +5,8 @@
 <div class="homepage-banner py-3 m-0 text-center">
     <h2 class="text-white">For pissed off people.</h2>
 </div>
-<!-- Django Messages -->
+
+<!-- Django messages -->
 {% for message in messages %}
 <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
     {{ message | safe }}
@@ -13,7 +14,7 @@
 </div>
 {% endfor %}
 
-<!-- Blog posts -->
+<!-- List of blog posts -->
 <div class="container-fluid">
     <div class="row my-4">
         {% for post in post_list %}
@@ -33,6 +34,7 @@
                         <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{post.author}} on
                                 {{ post.created_on }}</small>
                         </p>
+                        <!-- If user is the author, will have access to edit or delete post -->
                         {% if user.is_authenticated and user == post.author %}
                         <ul class="authorized-user-links">
                             <li><small><a class="link-secondary" aria-label="Edit your post"
@@ -49,6 +51,7 @@
                             </li>
                         </ul>
                         {% endif %}
+                        <!-- Section to view number of likes and comments -->
                         <div class="mt-3">
                             <p class="mb-0"><small><i class="fa-solid fa-face-angry"></i> {{ post.number_of_likes }}
                                     raged</small></p>

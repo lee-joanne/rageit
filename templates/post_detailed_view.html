@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- Django messages -->
 {% for message in messages %}
 {% if 'post_like' in message.extra_tags %}
 <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
@@ -18,10 +19,12 @@
             <div>
                 <p class="mb-0"><small><i class="fa-solid fa-user"></i> Posted by {{ post.author }},
                         {{ post.created_on }}</small></p>
+                <!-- Will show revision date only if user makes a revision -->
                 {% if is_revised %}
                 <p class="mb-0"><small><i class="fa-solid fa-user-pen"></i> Last updated
                         {{ post.revised_on }}</small></p>
                 {% endif %}
+                <!-- If user is the author, is able to edit or delete post -->
                 {% if user.is_authenticated and user == post.author %}
                 <ul class="authorized-user-links">
                     <li><small><a class="link-secondary" aria-label="Edit your post"
@@ -48,6 +51,7 @@
                     class="img-fluid card-img">
                 {% endif %}
                 <div class="d-inline">
+                    <!-- If user is not the author, is able to like or dislike post -->
                     {% if user.is_authenticated and user != post.author %}
                     <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                         {% csrf_token %}
@@ -65,6 +69,7 @@
                     <span class="text-secondary text-white"><i class="fa-solid fa-face-angry"></i></span>
                     {% endif %}
                 </div>
+                <!-- Shows how many likes and comments. Also gives feedback to user if they have liked the post -->
                 {{ post.number_of_likes }} <i class="fa-solid fa-comment"></i>
                 {{ post.number_of_comments }}
                 {% if liked %}
@@ -75,6 +80,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Comments Section -->
         <div class="col-md-4 col-sm-12">
             <h3 class="text-center">Comments Section: </h3>
@@ -95,6 +101,7 @@
             <div class="border shadow-sm p-2 mb-3">
                 <h3><i class="fa-solid fa-user"></i> {{ comment.author }}</h3>
                 <p class="m-0"><small>{{ comment.created_on }}</small></p>
+                <!-- If user is the comment author, is able to delete comment -->
                 {% if user.is_authenticated and user == comment.author %}
                 <ul class="authorized-user-links">
                     <li><small><a class="link-danger d-inline" href="{% url 'delete_comment' comment.id %}">
@@ -109,11 +116,15 @@
             </div>
             {% endfor %}
             {% else %}
+            <!-- If there are no comments, will show this message -->
             <p class="text-center">It's lonely here...<i class="fa-solid fa-face-sad-tear"></i></p>
             {% endif %}
+            <!-- If user is logged in, able to leave a comment -->
             {% if user.is_authenticated %}
             <div class="border shadow-sm p-3 m-4">
                 <p class="text-center">Add a Comment?</p>
+
+                <!-- Form to make a comment -->
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div>
@@ -125,6 +136,7 @@
                         <input class="btn border comment-btn text-white" type="submit" value="Submit">
                     </div>
                 </form>
+
             </div>
             {% endif %}
         </div>
