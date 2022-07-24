@@ -103,7 +103,9 @@
                     </li>
                 </ul>
                 {% endif %}
-                {{ comment.content | linebreaks }}
+                <div class="mt-3">
+                    {{ comment.content | linebreaks }}
+                </div>
             </div>
             {% endfor %}
             {% else %}
