@@ -1,5 +1,5 @@
-let signUpMessage = document.getElementById("signup-message")
-let signUpHover = document.getElementById("signup-hover")
+let signUpMessage = document.getElementById("signup-message");
+let signUpHover = document.getElementById("signup-hover");
 
 signUpHover.addEventListener("mouseover", showMessage);
 signUpHover.addEventListener("mouseout", hideMessage);

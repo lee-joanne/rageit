@@ -21,10 +21,11 @@
             <div class="p-3 mx-1 d-flex justify-content-center">
                 <div class="card shadow-sm" style="width: 85%;">
                     {% if "placeholder" in post.featured_image.url %}
-                    <img class="card-img-top" src="https://i.imgflip.com/4f1odp.png">
+                    <img class="card-img-top" src="https://i.imgflip.com/4f1odp.png"
+                        alt="Placeholder photo of a very angry meme face">
                     {% else %}
-                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Card image cap"
-                        class="img-fluid">
+                    <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}"
+                        alt="Featured photo posted by user">
                     {% endif %}
                     <div class="card-body">
                         <a class="card-title" href="{% url 'post_detailed_view' post.slug %}">{{ post.title }}</a>
