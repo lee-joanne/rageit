@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 {% endif %}
-                <h2 class="mb-3">{{ post.title }}</h2>
+                <h2 class="text-break mb-3">{{ post.title }}</h2>
             </div>
             <div>
                 {% if "placeholder" in post.featured_image.url %}
@@ -70,7 +70,7 @@
                 {% if liked %}
                 <span>You raged this post</span>
                 {% endif %}
-                <div class="mt-4">
+                <div class="mt-4 text-break">
                     {{ post.content | linebreaks }}
                 </div>
             </div>
@@ -103,7 +103,7 @@
                     </li>
                 </ul>
                 {% endif %}
-                <div class="mt-3">
+                <div class="mt-3 text-break">
                     {{ comment.content | linebreaks }}
                 </div>
             </div>
