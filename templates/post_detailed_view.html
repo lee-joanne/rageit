@@ -85,12 +85,14 @@
         <div class="col-md-4 col-sm-12">
             <h3 class="text-center">Comments Section: </h3>
             {% for message in messages %}
+            <!-- If user deletes a comment, shows alert message -->
             {% if 'comment_deleted' in message.extra_tags %}
             <div class="alert alert-success" role="alert">
                 {{ message | safe }}
             </div>
             {% endif %}
             {% endfor %}
+            <!-- If user makes a comment, shows alert message -->
             {% if commented %}
             <div class="alert alert-success" role="alert">
                 Your comment is live!
@@ -119,11 +121,10 @@
             <!-- If there are no comments, will show this message -->
             <p class="text-center">It's lonely here...<i class="fa-solid fa-face-sad-tear"></i></p>
             {% endif %}
-            <!-- If user is logged in, able to leave a comment -->
+            <!-- If user is logged in, is able to leave a comment -->
             {% if user.is_authenticated %}
             <div class="border shadow-sm p-3 m-4">
                 <p class="text-center">Add a Comment?</p>
-
                 <!-- Form to make a comment -->
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -136,7 +137,6 @@
                         <input class="btn border comment-btn text-white" type="submit" value="Submit">
                     </div>
                 </form>
-
             </div>
             {% endif %}
         </div>

@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 
 class HomepageView(ListView):
     '''
-    Class-based view for homepage to show lists of posts
+    Class-based view for homepage to show list of posts
     '''
     model = Post
     queryset = Post.objects.order_by('-created_on')
@@ -24,7 +24,7 @@ class HomepageView(ListView):
 
 class PostDetailedView(DetailView):
     """
-    Class-based view to show detailed view of individual posts
+    Class-based detail view to show detailed view of individual posts
     """
     model = Post
     template_name = 'post_detailed_view.html'
@@ -36,14 +36,16 @@ class PostDetailedView(DetailView):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+
         return render(request, 'post_detailed_view.html', {
             'post': post,
             'slug': slug,
             'post_comment': post_comment,
             'comment_form': CommentForm(),
             'liked': liked,
-            'is_revised': post.revised_on - post.created_on > timedelta(seconds=1)
+            'is_revised': (
+                (post.revised_on - post.created_on) > timedelta(seconds=1)
+            )
         })
 
     def post(self, request, slug):
@@ -77,7 +79,7 @@ class PostDetailedView(DetailView):
 
 class CreatePostView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """
-    Class-based view for users to create new posts and have it saved
+    Class-based create view for users to create new posts and have it saved
     """
     login_url = '/accounts/login/'
     model = Post
@@ -93,7 +95,7 @@ class CreatePostView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
 
 class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     """
-    Class-based view for users to be able to edit posts they have made
+    Class-based edit view for users to be able to edit posts they have made
     """
     login_url = '/accounts/login/'
     model = Post
@@ -102,9 +104,14 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_url = "/"
     success_message = "Your changes are now updated!"
 
-    # Code on url permission access validation is taken from 
+    # Code on url permission access validation is taken from
     # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
     def get(self, request, slug):
+        """
+        Function is to ensure only the author is able
+        to access the url to edit the post or else
+        an error message will be shown
+        """
         post = get_object_or_404(Post, slug=slug)
         user = request.user
         if str(user.username) != str(post.author):
@@ -118,7 +125,7 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
 
 class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     """
-    Class-based view for users to delete their posts
+    Class-based delete view for users to delete their posts
     """
     login_url = '/accounts/login/'
     model = Post
@@ -126,9 +133,14 @@ class DeletePostView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     success_url = "/"
     success_message = "Your post is successfully deleted"
 
-    # Code on url permission access validation is taken from 
+    # Code on url permission access validation is taken from
     # DamianJacob: https://github.com/Damianjacob
     def get(self, request, slug):
+        """
+        Function is to ensure only the author is able
+        to access the url to delete the post or else
+        an error message will be shown
+        """
         post = get_object_or_404(Post, slug=slug)
         user = request.user
         if str(user.username) != str(post.author):
@@ -156,22 +168,33 @@ class PostLike(LoginRequiredMixin, View):
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
-            messages.success(self.request, '<i class="fa-solid fa-heart-crack"></i> You unraged this post', extra_tags="post_like")
+            messages.success(
+                self.request,
+                '<i class="fa-solid fa-heart-crack"></i> You unraged this',
+                extra_tags="post_like")
         else:
             post.likes.add(request.user)
-            messages.success(self.request, '<i class="fa-solid fa-face-angry"></i> You raged this post', extra_tags="post_like")
-        
+            messages.success(
+                self.request,
+                '<i class="fa-solid fa-face-angry"></i> You raged this',
+                extra_tags="post_like")
+
         return HttpResponseRedirect(reverse('post_detailed_view', args=[slug]))
 
 
 class CommentDelete(LoginRequiredMixin, DeleteView):
     """
-    Class-based view for deleting a comment
+    Class-based delete view for deleting a comment
     """
     login_url = '/accounts/login/'
     model = Comment
     template_name = "comment_confirm_delete.html"
 
     def get_success_url(self):
-        messages.success(self.request, 'Comment successfully deleted', extra_tags="comment_deleted")
-        return reverse('post_detailed_view', kwargs={'slug': self.object.post.slug})
+        messages.success(
+            self.request,
+            'Comment successfully deleted',
+            extra_tags="comment_deleted")
+        return reverse(
+            'post_detailed_view', kwargs={
+                'slug': self.object.post.slug})

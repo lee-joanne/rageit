@@ -6,7 +6,7 @@
 <div class="alert alert-success alert-dismissible fade show text-center hide" id="image-upload-errormessage"
     role="alert">
     <p>Your file is not jpeg, jpg, or png. Please upload a new one! Submitting the post with this file will throw an
-        error.</p>
+        error. You have been warned.</p>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
@@ -17,7 +17,6 @@
                 <h2><i class="fa-solid fa-face-angry"></i> What pissed you off today?</h2>
             </div>
             <hr>
-
             <!-- Form for creating posts -->
             {{ form.errors }}
             <form method="POST" enctype="multipart/form-data">
@@ -33,7 +32,7 @@
                     <label for="post_content"></label>
                 </div>
                 <div class="mb-4">
-                    <label for="post_image" class="form-label">Image it (if you want. Must be jpeg, jpg, or png)</label>
+                    <label for="post_image" class="form-label">Optional: Image it (Must be jpeg, jpg, or png)</label>
                     <input class="form-control" type="file" id="post_image" name="featured_image"
                         onchange="imageValidation()">
                 </div>
@@ -41,7 +40,6 @@
                     <input class="btn border text-white btn-hover-style" type="submit" value="Vent it">
                 </div>
             </form>
-
         </div>
     </div>
 </div>
