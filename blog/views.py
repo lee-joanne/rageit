@@ -103,7 +103,7 @@ class EditPostView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_message = "Your changes are now updated!"
 
     # Code on url permission access validation is taken from 
-    # DamianJacob: https://github.com/Damianjacob
+    # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         user = request.user

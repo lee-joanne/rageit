@@ -2,6 +2,14 @@
 
 {% block content %}
 
+<!-- Error message to be shown if user uploads an incorrect file -->
+<div class="alert alert-success alert-dismissible fade show text-center hide" id="image-upload-errormessage"
+    role="alert">
+    <p>Your file is not jpeg, jpg, or png. Please upload a new one! Submitting the post with this file will throw an
+        error.</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="homepage-banner border rounded text-white p-5 col-md-6 col-xs-12 shadow">
@@ -26,11 +34,11 @@
                 </div>
                 <div class="mb-4">
                     <label for="post_image" class="form-label">Image it (if you want. Must be jpeg, jpg, or png)</label>
-                    <input class="form-control" type="file" id="post_image" name="featured_image">
+                    <input class="form-control" type="file" id="post_image" name="featured_image"
+                        onchange="imageValidation()">
                 </div>
                 <div class="text-center">
-                    <input class="btn border text-white btn-hover-style" type="submit" value="Vent it"
-                        onclick="imageValidate()">
+                    <input class="btn border text-white btn-hover-style" type="submit" value="Vent it">
                 </div>
             </form>
 

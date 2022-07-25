@@ -2,6 +2,14 @@
 
 {% block content %}
 
+<!-- Error message to be shown if user uploads an incorrect file -->
+<div class="alert alert-success alert-dismissible fade show text-center hide" id="image-upload-errormessage"
+    role="alert">
+    <p>Your file is not jpeg, jpg, or png. Please upload a new one! Submitting the post with this file will throw an
+        error.</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="homepage-banner border rounded text-white p-5 col-md-6 col-xs-12 shadow">
@@ -9,7 +17,6 @@
                 <h2>Edit your post</h2>
             </div>
             <hr>
-
             <!-- Update post form -->
             {{ form.errors }}
             <form method="POST" enctype="multipart/form-data">
@@ -25,14 +32,15 @@
                         style="height: 200px">{{ post.content }}</textarea>
                 </div>
                 <div class="mb-4">
-                    <label for="post_image" class="form-label">Change image if you like!</label>
-                    <input class="form-control" type="file" id="post_image" name="featured_image">
+                    <label for="post_image" class="form-label">Change image if you like! (Must be jpeg, jpg, or
+                        png)</label>
+                    <input class="form-control" type="file" id="post_image" name="featured_image"
+                        onchange="imageValidation()">
                 </div>
                 <div class="text-center">
                     <input class="btn border text-white btn-hover-style" type="submit" value="Update">
                 </div>
             </form>
-
         </div>
     </div>
 </div>
