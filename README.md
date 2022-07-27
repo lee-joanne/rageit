@@ -58,8 +58,7 @@ Welcome to RAGEit! The blog where you can rage freely and vent away your anger, 
 
 - Colour Scheme:
 
-    1. Red/Claret (#5F021F)
-    ![Screenshot of block of the colour #5F021F](documentation/color_block_red.png)
+    1. Red (#5F021F)
 
     2. White
 
@@ -90,12 +89,11 @@ Welcome to RAGEit! The blog where you can rage freely and vent away your anger, 
 
 ### Kanban Board
 
-- I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they are completed, they would be dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as either Must Have or Should Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks by the end. 
-
 ![Screenshot of Kanban board 1](documentation/kanbanboard1.png)
 ![Screenshot of Kanban board 2](documentation/kanbanboard2.png)
 ![Screenshot of Kanban board 3](documentation/kanbanboard3.png)
 
+I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they are completed, they would be dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as either Must Have or Should Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks by the end. 
 
 ## Features
 
@@ -128,7 +126,7 @@ If the user is the author of the post, they are able to see 'edit' and 'delete'.
 
 The homepage also displays confirmation messages to the user as shown in these series of screenshots. The homepage displays messages such as when the user signs in, signs out, edits a post, or deletes a post. These messages are vital to communiate with the user when they perform a task to help confirm their task is completed or achieved. 
 
-- Sign In/Login/Logout:
+- Sign In/Login/Logout Pages:
 
 ![Screenshot of sign in page](documentation/signup-page.png)
 ![Screenshot of sign in page when arrow is hovered](documentation/signup-page-hover.png)
@@ -153,15 +151,15 @@ When the user is logged in and clicks 'Create a New Post' in the navbar, the use
 The detailed view of each post is accessible by clicking on the titles of the posts in the homepage. The slug feature of Django will direct the user to the specific url of each post, giving them the detailed view. When the user accesses the detailed view, the user will be able to see the full post content as well as the comments section. If there are no comments on the post, it will display the message 'it's lonely here'. If the user is NOT signed in, they will not see the textbox to be able to comment. If the user is signed in, they are able to leave a comment behind. 
 
 ![Screenshot of comments made by you among comments made by others](documentation/detailedpost-yourcommentsvsothers.png)
-![Screenshot of message when commented](documentation/detailedpost-commented.png)
-![Screenshot of confirmation to delete comment](documentation/detailedpost-confirmdelete.png)
-![Screenshot of message when comment deleted](documentation/detailedpost-deletedcomment.png)
+![Screenshot of message when commented](documentation/detailedview-commented.png)
+![Screenshot of confirmation to delete comment](documentation/detailedview-confirmdelete.png)
+![Screenshot of message when comment deleted](documentation/detailedview-deletedcomment.png)
 
 In the comments section, users will be able to quickly identify their own comments from comments made by others as it will display the option to delete their comment. The comments will show the username of the commenter and the date the comment was made. When the user makes as comment, a message banner will show confirming that the comment is live. If the user wishes to delete their comment, they can click the 'delete comment' button which will redirect them to another page to confirm the deletion. Once the user confirms, the user will be redirected to the post and there will be a banner confirming the user's comment is deleted.
 
 ![Screenshot of confirmation of your react on post](documentation/detailedpost-youraged-youcommented.png)
-![Screenshot of message when post is raged](documentation/detailedpost-raged.png)
-![Screenshot of message when post is unraged](documentation/detailedpost-unraged.png)
+![Screenshot of message when post is raged](documentation/detailedview-raged.png)
+![Screenshot of message when post is unraged](documentation/detailedview-unraged.png)
 
 If the user has raged (reacted to) the post, they will be able to see, beside the rage / comment counter below the featured image, that they have already raged to the post. The user is able to rage and unrage the posts. When users rage/unrage posts, a message banner will pop up at the top to communicate with the user that their action is confirmed. The rage button will be circular to inform the user that the rage icon is indeed a button that can be clicked. When hovered, the rage icon will disappear to help confirm the user that it is clickable. Users can only rage to other people's posts. 
 
@@ -191,7 +189,7 @@ In the future, I wish to implement my original data model of the comments being 
 
 ## Technologies Used
 
-### Languages and Python Packages/Libraries Used
+### Languages and Packages/Libraries Used
 
 ### Frameworks, Libraries & Programs Used
 
