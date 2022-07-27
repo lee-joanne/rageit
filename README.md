@@ -59,9 +59,7 @@ Welcome to RAGEit! The blog where you can rage freely and vent away your anger, 
 - Colour Scheme:
 
     1. Red (#5F021F)
-
     2. White
-
     3. Black
 
     - The main colours I have selected for this website are red (#5F021F), white, and black. I chose red because I wanted the colour to match the theme of the blog, which is all about rage. I wanted to keep the colours minimalistic so I have red (#5F021F) as the main colour, white font if the background is (#5F021F), and black font if the background is white. I used red (#5F021F) as the hover colour for the post titles (links) to keep to the red theme. The main posts have the red (#5F021F) background and white font. 
@@ -99,15 +97,25 @@ I used a kanban board to help organize the user stories and tasks required for t
 
 ### Existing Features
 
-- Logo and Navbar: 
+### Logo and Navbar: 
 
 ![Screenshot of logo and navbar desktop not signed in](documentation/logo-navbar-desktop.png)
 ![Screenshot of logo and navbar desktop signed in](documentation/logo-navbar-desktop-signedin.png)
 ![Screenshot of logo and navbar mobile not signed in](documentation/logo-navbar-mobile.png)
 
-For the h1 logo, I used the Permanent Marker font to help define the theme of the blog. When the user is not signed in, the navbar will show 'Login' and 'Sign Up' as options. When the user is signed in, the navbar will say 'hello' with the username beside it to confirm the username to the user. The navbar will also show an option to create a post, and to log out. The navbar links and logo are in red (#5F021F) to help show that they are clickable links, and the username name is in black to show that it is not clickable. When the navigation links are hovered, it will become white so the user receives feedback that the links are clickable. In smaller screens, the navbar will become a hamburger button that will become expandable when clicked. The navbar is fixed at the top so it will always remain at the top when the user scrolls down. This is added to enhance the user experience so that the user does not need to scroll all the way up when they want to access the navigation links. The navbar was created using Bootstrap 5. 
+For the h1 logo, I used the Permanent Marker font to help define the theme of the blog. When the user is not signed in, the navbar will show 'Login' and 'Sign Up' as options. When the user is signed in, the navbar will say 'hello' with the username beside it to confirm the username to the user. The navbar will also show an option to create a post, and to log out. The navbar links and logo are in red (#5F021F) to help show that they are clickable links, and the username name is in black to show that it is not clickable. When the navigation links are hovered, it will become white so the user receives feedback that the links are clickable. In smaller screens, the navbar will become a hamburger button that will become expandable when clicked. The navbar is fixed at the top so it will always remain at the top when the user scrolls down. This is added to enhance the user experience so that the user does not need to scroll all the way up when they want to access the navigation links.
 
-- Homepage: 
+User stories covered in Logo and Navbar:
+
+- As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
+
+- As a **user** I can **easily log out** so that **I can have more security on my account.**
+
+- As a **user** I can **easily log in** so that **I can quickly post or add more comments if I wish.**
+
+- As a **user** I can **create posts** so that **I can share my own rage-worthy posts.**
+
+### Homepage: 
 
 ![Screenshot of homepage banner](documentation/homepage-banner.png)
 ![Screenshot of homepage posts on desktop](documentation/homepage-posts.png)
@@ -126,7 +134,18 @@ If the user is the author of the post, they are able to see 'edit' and 'delete'.
 
 The homepage also displays confirmation messages to the user as shown in these series of screenshots. The homepage displays messages such as when the user signs in, signs out, edits a post, or deletes a post. These messages are vital to communiate with the user when they perform a task to help confirm their task is completed or achieved. 
 
-- Sign In/Login/Logout Pages:
+User stories covered in homepage:
+
+- As a **user** I can **view posts on the main page with the excerpt** so that **I can quickly read which post seems interesting to me before clicking on it and reading further.**
+
+- As a **user** I can **easily see how many posts or comments each post has in the homepage** so that **I can see which posts are popular or have the most comments if I wanted to read the most popular posts.**
+
+- As a **user** I can **revise my posts** so that **I can make any changes if needed.**
+
+- As a **user** I can **delete my posts** so that **I have the freedom to remove any posts I no longer want to be shared.**
+
+
+### Sign Up/Login/Logout Pages:
 
 ![Screenshot of sign in page](documentation/signup-page.png)
 ![Screenshot of sign in page when arrow is hovered](documentation/signup-page-hover.png)
@@ -135,7 +154,15 @@ The homepage also displays confirmation messages to the user as shown in these s
 
 Using Django's allauth, users are able to sign up, login, and logout easily. The allauth templates were edited to match the base template of RAGEit. These links are accessed via the navbar. When these links are clicked, it will take the user to a separate page for each option. The signup page contains an arrow which, when hovered, explains RAGEit's views on privacy and reasoning for email addresses to be optional. This function was created using basic JavaScript. When the user tries to log out, it will ask the user for confirmation before logging out the user. 
 
-- Creating A Post:
+User stories covered in Sign Up/Login/Logout: 
+
+- As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
+
+- As a **user** I can **easily log out** so that **I can have more security on my account.**
+
+- As a **user** I can **easily log in** so that **I can quickly post or add more comments if I wish.**
+
+### Creating A Post:
 
 ![Screenshot of creating a post](documentation/creatingpost.png)
 ![Screenshot of creating a post with incorrect file](documentation/creatingpost-wrongfile.png)
@@ -143,7 +170,15 @@ Using Django's allauth, users are able to sign up, login, and logout easily. The
 
 When the user is logged in and clicks 'Create a New Post' in the navbar, the user will be directed to this page where they can create their post. Users can write the title of the post, the post content, and upload an image if they wish to. If the user uploads a file that is not jpeg, jpg, or png, the website will let the user know that the file is not accepted and will throw an error if the user proceeds with this file type. If the user does not select any photo, a placeholder image will be displayed instead which is of the crying angry meme man. 
 
-- Detailed Post Views:
+User stories covered in Creating A Post:
+
+- As a **user** I can **create posts** so that **I can share my own rage-worthy posts.**
+
+- As a **user** I can **share photos in my posts** so that **I can add photographic evidence or add context to my rage-worthy posts.**
+
+- As a **user** I can **receive feedback immediately if I have uploaded an incorrect file or image type** so that **I can immediately know to fix my file or image before submitting a new or edited post or comment.**
+
+### Detailed Post Views:
 
 ![Screenshot of comments section with no comments, logged out](documentation/detailedpost-nocomments-loggedout.png)
 ![Screenshot of comments section with no comments, logged in](documentation/detailedpost-nocomments-loggedin.png)
@@ -171,17 +206,55 @@ If any edits have been made to the post, there will be another paragraph shown b
 
 When the user views their own post, users will be able to see the option to edit and delete post. The rage icon is no longer circular since the users are not able to react to their own posts. The rage button is not clickable here so therefore the rage icon is just a regular icon. 
 
-- Editing A Post:
+User stories covered in Detailed Post Views:
+
+- As a **user** I can **make comments on posts** so that **I can share my thoughts on other people's rage-worthy posts.**
+
+- As a **user** I can **revise my posts** so that **I can make any changes if needed.**
+
+- As a **user** I can **delete my posts** so that **I have the freedom to remove any posts I no longer want to be shared.**
+
+- As a **user** I can **delete my comments** so that **I have the freedom to remove any comments I no longer want to be shown.**
+
+- As a **User** I can **like posts or click again to unlike** so that **I can show my appreciation towards a post by liking, or change my mind and dislike later.**
+
+### Editing A Post:
 
 ![Screenshot of editing post](documentation/editingpost.png)
 
-When users are editing their own posts (accessed via homepage or in detailed post view), they will be redirected to a new page. The form will already be prepopulated with the user's existing post, and users are able to make the changes they wish. If users do not select a new photo, the current photo will remain. If the user selects a new photo, the new photo will be used. 
+When users are editing their own posts (accessed via homepage or in detailed post view), they will be redirected to a new page. The form will already be prepopulated with the user's existing post, and users are able to make the changes they wish. If users do not select a new photo, the current photo will remain. If the user does not upload a file that is jpeg, jpg, or png, it will show the same error message warning the user not to proceed with the file or else an error will be shown. If the user selects a new photo, the new photo will be used. If user who is NOT the author tries to access the url page to edit, it will throw an error that the user is forbidden to enter, to protect the author's posts. 
 
-- Deleting A Post:
+User stores covered in Editing A Post:
+
+- As a **user** I can **revise my posts** so that **I can make any changes if needed.**
+
+- As a **user** I can **only edit and delete my own posts and view an error message if I tamper with the URL to edit or delete someone else's post** so that **I can have enhanced security and ensure no one tampers with my posts.**
+
+- As a **user** I can **receive feedback immediately if I have uploaded an incorrect file or image type** so that **I can immediately know to fix my file or image before submitting a new or edited post or comment.**
+
+### Deleting A Post:
 
 ![Screenshot of deleting post](documentation/deletingpost.png)
 
-When users try to delete their own posts (accessed via homepage or in detailed post view), they will be redirected to a new page. The page will ask for confirmation if the user wishes to go ahead with their deletion and shows the title of the post they wish to delete. The user then can confirm whether they want to delete or not. 
+When users try to delete their own posts (accessed via homepage or in detailed post view), they will be redirected to a new page. The page will ask for confirmation if the user wishes to go ahead with their deletion and shows the title of the post they wish to delete. The user then can confirm whether they want to delete or not. If user who is NOT the author tries to access the url page to delete, it will throw an error that the user is forbidden to enter, to protect the author's posts.
+
+User stories covered in Deleting A Post:
+
+- As a **user** I can **delete my posts** so that **I have the freedom to remove any posts I no longer want to be shared.**
+
+- As a **user** I can **only edit and delete my own posts and view an error message if I tamper with the URL to edit or delete someone else's post** so that **I can have enhanced security and ensure no one tampers with my posts.**
+
+### Admin:
+
+![Screenshot of admin page](documentation/admin-page.png)
+
+Superuser was created for this blog for the admin to be able to review, create, and delete posts in the admin page with ease. The admin is in charge of all of the posts and is able to delete any posts desired to ensure the blog is appropriate and has the layout maintained. The admin also has access to the comments and is able to review, create, and delete comments to keep the comments section consistent and appropriate. 
+
+User stories covered in Admin:
+
+- As a **site admin** I can **review, create, and delete posts** so that **I can manage my website's main layout and content.**
+
+- As a **site admin** I can **review, create, and delete comments on posts** so that **I can manage the comments and content on posts.**
 
 ### Future Features
 
