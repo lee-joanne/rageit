@@ -40,7 +40,6 @@ Welcome to RAGEit! The blog where you can rage freely and vent away your anger, 
 
     14. As a **User** I can **like posts or click again to unlike** so that **I can show my appreciation towards a post by liking, or change my mind and dislike later.**
 
-
 - Site Admin: 
 
     1. As a **site admin** I can **review, create, and delete posts** so that **I can manage my website's main layout and content.**
@@ -77,13 +76,16 @@ Welcome to RAGEit! The blog where you can rage freely and vent away your anger, 
 - Wireframes have been created using the program Whimsical
 
     - Mobile: 
-        ![Screenshot of Mobile Wireframe](documentation/wireframes/mobile_wireframe.png)
+
+    ![Screenshot of Mobile Wireframe](documentation/wireframes/mobile_wireframe.png)
 
     - Tablet: 
-        ![Screenshot of Tablet Wireframe](documentation/wireframes/tablet_wireframe.png)
+
+    ![Screenshot of Tablet Wireframe](documentation/wireframes/tablet_wireframe.png)
 
     - Desktop:
-        ![Screenshot of Desktop Wireframe](documentation/wireframes/desktop_wireframe.png)
+
+    ![Screenshot of Desktop Wireframe](documentation/wireframes/desktop_wireframe.png)
 
 ### Kanban Board
 
@@ -506,7 +508,20 @@ The project has been tested heavily via manual testing. The website has been tes
 
 ### Bugs
 
-Many bugs have been encountered while creating this project. 
+Many bugs have been encountered while creating this project.
+
+- When running the JS file through JSHint the first time, there was an error for imageValidation being an unused variable. This was due to the function being called in the HTML file as 'onchange="imageValidation"'. In order to bypass this, I would remove the function from being called in HTML and create an addEventListener in JS. However, there were issues with my other eventListeners in my JS file. In my create_post.html, when trying to run the imageValidation function, the console would state that there was an error for my other eventListeners since there are no variables or properties matching signUpMessage and signUpHover (these would be available in the signup html page instead). After researching on Stack Overflow and speaking with Tutor Support, I created an if statement to check if these variables exist. The error disappeared and the imageValidation function now runs perfectly.
+
+- In the post_detailed_view.html page, I was trying to create an if else statement to display a paragraph to the user if there are no comments posted on the post. I wanted the paragraph to say "it's lonely here" if there are no comments, and to show the comments if there are comments. I was not able to get the if else statement correct, and it kept stating that there were no comments. After speaking with my mentor, I have incorrectly formatted my if else statement and he has guided me on the correct syntax.
+
+- A big bug I ran into was trying to show the revised date of the post ONLY when a revision is made. In post_detailed_view.html, I wanted the post creation date to show up. If the user did NOT make an edit, I ONLY wanted the creation date to show. If the user made an edit, THEN it would show that the post was edited. I tried to create a if_revised function in views.py to check to see if creation date does not match revised date, for it to prove true that the post was indeed revised. However, in the html page, it would always show the revised dates, regardless if it was revised or not. I talked to Tutor Support, and it turns out that revised date and created date are in milliseconds so it will always show that they do not equal. I asked my mentor for support and he suggested to use a time delta to check the difference between created date and revised date. Using time delta to 1 second, I managed to get this feature added successfully. 
+
+- When deploying, I was running into failed deploy errors on Heroku. It turns out that I had downloaded crispy-forms and had it in my installed apps in settings.py, but actually have never used crispy-forms anywhere. I ended up having to uninstall crispy-forms and remove it from installed apps and the deployment worked successfully.
+
+- I ran into complications with using author as a foreignkey in my models.py Comment class. This is where my Django knowledge really had to be tested when creating ways to show the author of comments in the HTML, and how to delete comments. I received a lot of help from Tutor Support on creating the comment delete views.py function, by suggesting me to use DeleteView. Tutor Support and I worked together to solve how to redirect the user back to the post_detailed_view of the specific post that they were commenting on, after the comment is deleted.
+
+- When first testing out the project after deploying, I noticed that the text would go over the container if the title or comments were very long strings. I managed to fix this by adding the Bootstrap class text-break. 
+
 
 ## Deployment
 
