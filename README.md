@@ -400,11 +400,11 @@ Passed with no errors.
 
 - JavaScript Validation (JSHint):
 
-Only error shown is that imageValidation is an unused variable because this function is called in the HTML instead of the script file. This function is called in create_post.html and update_post.html templates.
+Passed with no errors.
 
 <details>
 <summary>Screenshot of JavaScript validation</summary>
-<img src='documentation/javascript-validation.png' alt='javascript validation'>
+<img src='documentation/javascript-validator.png' alt='javascript validation'>
 </details>
 
 - Python Validation (PEP8): 
