@@ -342,198 +342,262 @@ This project was made primarily with Django.
 
 - HTML Validation (W3C HTML):
 
-All passed with no errors.
+    All passed with no errors.
 
-<details>
-<summary>Screenshot of HTML Validation: Homepage</summary>
-<img src='documentation/html-homepage.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Homepage</summary>
+    <img src='documentation/html-homepage.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Create Post</summary>
-<img src='documentation/html-createpost.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Create Post</summary>
+    <img src='documentation/html-createpost.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Detailed Post</summary>
-<img src='documentation/html-detailedpost.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Detailed Post</summary>
+    <img src='documentation/html-detailedpost.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Logout</summary>
-<img src='documentation/html-logout.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Logout</summary>
+    <img src='documentation/html-logout.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Signup</summary>
-<img src='documentation/html-signup.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Signup</summary>
+    <img src='documentation/html-signup.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Login</summary>
-<img src='documentation/html-login.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Login</summary>
+    <img src='documentation/html-login.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Update Post</summary>
-<img src='documentation/html-updatepost.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Update Post</summary>
+    <img src='documentation/html-updatepost.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Delete Post</summary>
-<img src='documentation/html-deletepost.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Delete Post</summary>
+    <img src='documentation/html-deletepost.png' alt='html validation'>
+    </details>
 
-<details>
-<summary>Screenshot of HTML Validation: Delete Comment</summary>
-<img src='documentation/html-commentdelete.png' alt='html validation'>
-</details>
+    <details>
+    <summary>Screenshot of HTML Validation: Delete Comment</summary>
+    <img src='documentation/html-commentdelete.png' alt='html validation'>
+    </details>
 
 - CSS Validation (W3C CSS):
 
-Passed with no errors.
+    Passed with no errors.
 
-<details>
-<summary>Screenshot of CSS validation</summary>
-<img src='documentation/css-validation.png' alt='CSS validation'>
-</details>
+    <details>
+    <summary>Screenshot of CSS validation</summary>
+    <img src='documentation/css-validation.png' alt='CSS validation'>
+    </details>
 
 - JavaScript Validation (JSHint):
 
-Passed with no errors.
+    Passed with no errors.
 
-<details>
-<summary>Screenshot of JavaScript validation</summary>
-<img src='documentation/javascript-validator.png' alt='javascript validation'>
-</details>
+    <details>
+    <summary>Screenshot of JavaScript validation</summary>
+    <img src='documentation/javascript-validator.png' alt='javascript validation'>
+    </details>
 
 - Python Validation (PEP8): 
 
-The settings.py file has not gone through the PEP8 validation due to the fragile and delicate nature of the file. Any unwanted tampering or modifications may break the project. Therefore, only the other Python files have been checked and validated.  
+    The settings.py file has not gone through the PEP8 validation due to the fragile and delicate nature of the file. Any unwanted tampering or modifications may break the project. Therefore, only the other Python files have been checked and validated.  
 
-<details>
-<summary>Screenshot of Python Validation: Admin</summary>
-<img src='documentation/python-admin.png' alt='pep8 validation'>
-</details>
+    <details>
+    <summary>Screenshot of Python Validation: Admin</summary>
+    <img src='documentation/python-admin.png' alt='pep8 validation'>
+    </details>
 
-<details>
-<summary>Screenshot of Python Validation: Apps</summary>
-<img src='documentation/python-app.png' alt='pep8 validation'>
-</details>
+    <details>
+    <summary>Screenshot of Python Validation: Apps</summary>
+    <img src='documentation/python-app.png' alt='pep8 validation'>
+    </details>
 
-<details>
-<summary>Screenshot of Python Validation: Forms</summary>
-<img src='documentation/python-form.png' alt='pep8 validation'>
-</details>
+    <details>
+    <summary>Screenshot of Python Validation: Forms</summary>
+    <img src='documentation/python-form.png' alt='pep8 validation'>
+    </details>
 
-<details>
-<summary>Screenshot of Python Validation: Models</summary>
-<img src='documentation/python-models.png' alt='pep8 validation'>
-</details>
+    <details>
+    <summary>Screenshot of Python Validation: Models</summary>
+    <img src='documentation/python-models.png' alt='pep8 validation'>
+    </details>
 
-<details>
-<summary>Screenshot of Python Validation: Urls</summary>
-<img src='documentation/python-urls.png' alt='pep8 validation'>
-</details>
+    <details>
+    <summary>Screenshot of Python Validation: Urls</summary>
+    <img src='documentation/python-urls.png' alt='pep8 validation'>
+    </details>
 
-<details>
-<summary>Screenshot of Python Validation: Views</summary>
-<img src='documentation/python-views.png' alt='pep8 validation'>
-</details>
+    <details>
+    <summary>Screenshot of Python Validation: Views</summary>
+    <img src='documentation/python-views.png' alt='pep8 validation'>
+    </details>
 
-<details>
-<summary>Screenshot of Python Validation: Rageit/Urls</summary>
-<img src='documentation/python-rageit-urls.png' alt='pep8 validation'>
-</details>
+    <details>
+    <summary>Screenshot of Python Validation: Rageit/Urls</summary>
+    <img src='documentation/python-rageit-urls.png' alt='pep8 validation'>
+    </details>
 
 - Lighthouse
 
-<details>
-<summary>Screenshot of Lighthouse Score: Homepage</summary>
-<img src='documentation/lighthouse-homepage.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Homepage</summary>
+    <img src='documentation/lighthouse-homepage.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Homepage Best Practices</summary>
-<img src='documentation/lighthouse-homepage-bestpractices.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Homepage Best Practices</summary>
+    <img src='documentation/lighthouse-homepage-bestpractices.png' alt='lighthouse score'>
+    </details>
 
-The homepage scored 83 for best practices. When looking into the score further, it seems to be due to low image resolution. These images appear to be from the user's featured images. Therefore, if the user uploads low-resolution photos, then the Lighthouse score will be lower.
+    The homepage scored 83 for best practices. When looking into the score further, it seems to be due to low image resolution. These images appear to be from the user's featured images. Therefore, if the user uploads low-resolution photos, then the Lighthouse score will be lower.
 
-<details>
-<summary>Screenshot of Lighthouse Score: Detailed View</summary>
-<img src='documentation/lighthouse-detailedpost.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Detailed View</summary>
+    <img src='documentation/lighthouse-detailedpost.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Create Post</summary>
-<img src='documentation/lighthouse-createpost.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Create Post</summary>
+    <img src='documentation/lighthouse-createpost.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Logout</summary>
-<img src='documentation/lighthouse-logout.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Logout</summary>
+    <img src='documentation/lighthouse-logout.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Update Post</summary>
-<img src='documentation/lighthouse-updatepost.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Update Post</summary>
+    <img src='documentation/lighthouse-updatepost.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Delete Post</summary>
-<img src='documentation/lighthouse-deletepost.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Delete Post</summary>
+    <img src='documentation/lighthouse-deletepost.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Login</summary>
-<img src='documentation/lighthouse-login.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Login</summary>
+    <img src='documentation/lighthouse-login.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Signup</summary>
-<img src='documentation/lighthouse-signup.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Signup</summary>
+    <img src='documentation/lighthouse-signup.png' alt='lighthouse score'>
+    </details>
 
-<details>
-<summary>Screenshot of Lighthouse Score: Comment Delete</summary>
-<img src='documentation/lighthouse-commentdelete.png' alt='lighthouse score'>
-</details>
+    <details>
+    <summary>Screenshot of Lighthouse Score: Comment Delete</summary>
+    <img src='documentation/lighthouse-commentdelete.png' alt='lighthouse score'>
+    </details>
 
 ### Manual Testing
 
+The project has been tested heavily via manual testing. The website has been tested using Google DevTools > Inspect, with all of the different devices listed. All pages are responsive to all listed devices, even the Galaxy Fold! The website has been tested on MacBook 2022, MacBook 2020, iMac 2019, iPhone 13 Mini, iPhone 11, iPad Pro, OnePlus, and ASUS ROG. Multiple friends have tested out this website, raging about their own personal issues. I tested this out myself by creating many different accounts, making many posts, reacting to my posts, unreacting, ensuring that all respective messages are shown when unraged/raged/commented/comment deleted. I have created and deleted many posts and many comments to ensure everything is deleted properly. I made posts and comments with very long string of text to ensure that all characters and text will remain within the container. I have tried tampering with the url to access edit_post and delete_post of a post made by a different author under a different user name and successfully reached the error page (however, this feature is not available for deleting comments). I have tried uploading a non jpeg/jpg/png file to create_post and edit_post and successfully tested the JavaScript message to show up. Lots of testing has been done to ensure the website works properley, and the code have been validated through respective validators. 
+
 ### Bugs
+
+Many bugs have been encountered while creating this project. 
 
 ## Deployment
 
-- The following steps were taken for the deployment process:
+- The following steps were taken for the deployment process (taken from the I Think Therefore I Blog project):
 
-    1. Ensure that the template used for the project is made with the Code Institute template linked above. 
-    2. Second, in all Python scripts, ensure that input methods have a new line character at the end of the text inside.
-    3. If any packages or installments were made, type in the following command in the terminal: **'pip3 freeze > requirements.txt'** so these installments / dependencies can work on Heroku. After typing this in, the requirements.txt file in the Code Institute Python template will automatically be updated. 
-    4. Commit and push these changes onto GitHub.
-    5. [Create an account for Heroku](https://id.heroku.com/login)
-    6. On the Heroku dashboard, go to **Create new app**. 
-    7. Name your app (must be a unique name) and select your region, and go to **Create app**.
-    8. On the next page after selecting **Create app**, go to the **Settings** tab. Scroll down to **Config Vars** and select **Reveal Config Vars**.
-    9. Since no APIs or Creds were used for Pirate Ship, the only Config Vars added was:
-    Key: PORT / 
-    Value: 8000
-    10. Next, scroll down to **Buildpacks**. Click **Add Buildpack** and select **Python** and **Save Changes**. Next, add **nodejs** and **Save changes**. Ensure Python is on top and nodejs is below. 
-    11. Next, scroll up and go to the **Deploy** tab.
-    12. Under **Deployment method**, select **GitHub** and confirm **Connect to GitHub**. 
-    13. Search for your repository name and click **Connect**.
-    14. Scroll down and select **Deploy Branch** next to **Manual Deploy**. Ensure the branch to deploy is master/main. 
-    15. Deployment gets created and live link is then previewed. 
+    **Project creation and initial deplyoment**
+    1. Ensure that the template used for the project is made with the Code Institute template linked [here](https://github.com/Code-Institute-Org/gitpod-full-template). 
+    2. Using pip3, install **[Django gunicorn](https://www.djangoproject.com/)**
+    3. Using pip3, install **dj_database_url psycopg2**
+    4. Using pip3, install **dj3-cloudinary-storage**
+    5. Run **pip3 freeze --local > requirements.txt** so installments /dependencies can work on Heroku.
+    6. Create Django project using **django-admin startproject** on terminal
+    7. Create Django app using **python3 manage.py startapp** on terminal
+    8. In settings.py, add installed the app under **INSTALLED_APPS**
+    9. Any changes in database (changing models, creating a new app), run migrations to the database using the command **python3 manage.py makemigrations** and then **python3 manage.py migrate**
+    10. [Create an account for Heroku](https://id.heroku.com/login)
+    11. On the Heroku dashboard, go to **Create new app**, give it a name and select region and submit.
+    12. On Heroku, under **Resources**, search up **Postgres** in **Add-ons** and select **Heroku Postgres**.
+    13. On Heroku, under the **Settings** tab, click on **Reveal Config vars**, copy the **DATABASE_URL**. 
+    14. In Gitpod, create a file called **env.py** (should already be in git ignore file in template used). Import os, and set up the **DATABASE_URL** environment variable where the Heroku **DATABASE_URL** will be pasted. 
+    15. In **env.py**, also create another environment variable for **SECRET_KEY** and create your secret key. Copy the **SECRET_KEY** value.
+    16. In Heroku, in **Config vars**, create a new **Config var** for **SECRET_KEY** and paste your secret key and click add. 
+    16. In Gitpod, go to **settings.py** and import os. Import **dj_database_url** and create if statement to check if **env.py** is a file, to import **env**.
+    17. In **SECRET_KEY** section in **settings.py**, import os.environ **SECRET_KEY**.
+    18. In **settings.py**, comment out the **DATABASES** and add in **DATABASES** to add **dj_database_url** from **env.py** file. 
+    19. In Heroku, add another **Config var**, KEY: PORT/ Value: 8000
+    20. Create a [Cloudinary account](https://cloudinary.com/). Copy the **API Environemnt variable**
+    21. In Gitpod, in **env.py**, add in the **CLOUDINARY_URL** and paste the **API Environment variable**.
+    22. In Heroku, create another **Config var** for **CLOUDINARY_URL** and paste in the value from **API Environment variable**
+    23. In Heroku, add another key for **DISABLE_COLLECTSTATIC** and set it to **1** since there are no static files currently. 
+    24. In **settings.py**, add in Cloudinary libraries under **INSTALLED_APPS**
+    25. In **settings.py**, add in **STATICFILES_STORAGE** to install Cloudinary further. Also set up **STATICFILES_DIRS** to connect to static. Create **MEDIA_URL** for **/media/** and set **DEFAULT_FILE_STORAGE** for Cloudinary media storage. 
+    26. At the top of **settings.py**, create **TEMPLATES_DIR** to join base directory and templates.
+    27. In **settings.py**, set **DIRS** in **TEMPLATES** to match **DIRS** to **TEMPALTE_DIR**.
+    28. In **settings.py**, add your Heroku app name followed by herokuapp.com in **ALLOWED_HOSTS**, as well as **localhost**.
+    29. In Gitpod, create **media**, **static**, and **templates** folders. 
+    30. In Gitpod, create a **Procfile**. Type in **web: gunicorn [projectname].wsgi**
+    31. Commit and push these changes onto GitHub.
+    32. In Heroku, under the **deploy** tab, choose **GitHub** as deployment method, login to GitHub, and search for your project repo. Click **manual deploy** (or **automatic deploy** if you want GitHub pushes to deploy to Heroku each time)
+    33. When deployment is successful, click **open app** to see your deployment. 
+    **Final deplyoment**
+    34. In **settings.py**, ensure **DEBUG** is **False** !!!!!!
+    35. In **settings.py**, create the setting **X_FRAME_OPTIONS** and set to **SAMEORIGIN**.
+    36. Commit and push these changes onto GitHub.
+    37. In Heroku, in **Reveal Config Vars**, remove **DISABLE_COLLECTSTATIC** variable. Under **Deploy**, scroll down to bottom and deploy branch. 
+
+- The following steps were taken for the cloning process: 
+
+  1. Log in to **[GitHub](https://github.com/)**.
+  2. Click on the profile icon to locate **'Your repositories'**. 
+  3. On the repository page, click on the repository you wish to clone.
+  4. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
+  5. Open **Terminal**.
+  6. In Terminal, change the current working directory to the desired location of the cloned directory.
+  7. Type git clone, and then paste the URL copied from GitHub earlier. 
+  8. Type **Enter** to create the local clone. 
 
 ## Credits
 
 ### Code
 
+- [Stack Overflow](https://stackoverflow.com/)
+    - Stack Overflow was referred to many many times for help on certain code and implementing features, such as understanding the class-based views.py, creating JavaScript functions, Django messages, overwriting Bootstrap 5 code with CSS, etc.
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+    - MDN Web Docs was referred to many times on general Django instructions.
+
+- Code Institute - I Think Therefore I Blog project
+    - The 'I Think Therefore I Blog' project was referred to many times on Django models, Django views, Django urls, the function to like and unlike posts, creating my HTML templates, and the idea of using Django's allauth for signing up, logging in, and logging out. The project was also referred to for the deployment process and how to install Cloudinary. 
+
+- [Damian Jacob](https://github.com/damianjacob)
+    - Damian Jacob has helped me a lot with this project. His codes for the Django views URL validation and JavaScript file validation were used and cited. 
+
+- [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial)
+    - This website was referred to when using Django's slug feature. Slug function codes were copied from this website and inserted into the models.py file. The codes are cited in models.py.
+
+- [freeCodeCamp.org YouTube](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
+    - This YouTube video uploaded by freeCodeCamp.org was referred to many times.
+
+- [GeeksforGeeks](https://www.geeksforgeeks.org/)
+    - This website was referred to many times when creating views.py file. This website was extremely helpful with detailed view, create view, delete view, and update view. 
+
+- [Django Documentation](https://www.djangoproject.com/)
+    - The official Django documentation was referred to many times while creating this project. 
+
+- Code Institute Tutor Support
+    - Tutor support helped me a lot with the project. Specifically, how to delete comments and redirect the user back to the detailed view of individual posts. Tutor Support was a massive help during this project, cannot thank them enough. 
+
 ### Acknowledgements
 
-
-
+Big thank you to my mentor for all of his support and help. Also really appreciate the Code Institute Slack channel for always being available and being super friendly helping me with my questions! Thank you to fellow Code Institute students such as Ian Meigh for testing my project and providing support throughout the development process. Most of all, massive thank you to Code Institute Tutor Support for helping me A LOT during this project!
 
 
 
