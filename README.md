@@ -83,7 +83,7 @@ Welcome to RAGEit, the blog where you can rage freely and vent away your anger, 
 - Data model has been created using the program Whimsical
 ![Screenshot of Data Model](documentation/datamodel.png)
 
-    - This is the initial data model idea. While creating the project, decided not to include the comment features such as updated on and featured image. Comment also uses foreignkey for author/username so that users can delete their comments.
+    - This is the initial data model idea. While creating the project, decided not to include the Comment features such as updated on and featured image. Comment also uses foreignkey for author/username so that users can delete their comments.
 
 ### Design
 
@@ -155,7 +155,7 @@ User stories covered in Logo and Navbar:
 ![Screenshot of homepage posts on desktop](documentation/homepage-posts.png)
 ![Screenshot of homepage posts on mobile](documentation/homepage-mobile.png)
 
-The homepage of the website shows a red banner that gives the user a brief introduction or explanation of the blog. On bigger screens, the posts are shown in columns of two and on smaller screens, one column for easy readability. The posts are shown with the featured image at the top, the post title in capital letters (to enhance the anger), a brief excerpt of the post (up to 200 characters), the username who made the post, the date when it was posted, and how many 'rages' and comments it has. The excerpt is there so the user can get a brief reading of the post before committing and clicking on the post to read further. The posts are ordered newest first so the users can get the latest rage posts. The post title is clickable (when hovered, becomes red (#5F021F)) which would take the user to the detailed view of the post. 
+The homepage of the website shows a red banner that gives the user a brief introduction or explanation of the blog. On bigger screens, the posts are shown in columns of two and on smaller screens, one column for easy readability. The posts are shown with the featured image at the top, the post title in capital letters (to enhance the anger), a brief excerpt of the post (up to 200 characters), the author of the post, the date when it was posted, and how many 'rages' and comments it has. The excerpt is there so the user can get a brief reading of the post before committing and clicking on the post to read further. The posts are ordered newest first so the users can get the latest rage posts. The post title is clickable (when hovered, becomes red (#5F021F)) which would take the user to the detailed view of the post. 
 
 ![Screenshot of homepage post if made by user](documentation/homepage-signedin.png)
 
@@ -186,7 +186,7 @@ User stories covered in homepage:
 ![Screenshot of login page](documentation/login-page.png)
 ![Screenshot of sign out page](documentation/logout-page.png)
 
-Using Django's allauth, users are able to sign up, login, and logout easily. The allauth templates were edited to match the base template of RAGEit. These links are accessed via the navbar. When these links are clicked, it will take the user to a separate page for each option. The signup page contains an arrow that, when hovered, explains RAGEit's views on privacy and reasoning for email addresses to be optional. This function was created using basic JavaScript. When the user tries to log out, it will ask the user for confirmation before logging out the user. 
+Using Django's allauth, users are able to sign up, login, and logout easily. The allauth templates are edited to match the base template of RAGEit. These links are accessed via the navbar. When these links are clicked, it will take the user to a separate page for each option. The signup page contains an arrow that, when hovered, explains RAGEit's views on privacy and reasoning for email addresses to be optional. This function was created using basic JavaScript. When the user tries to log out, it will ask the user for confirmation before logging out the user. 
 
 User stories covered in Sign Up/Login/Logout: 
 
@@ -217,7 +217,7 @@ User stories covered in Creating A Post:
 ![Screenshot of comments section with no comments, logged out](documentation/detailedpost-nocomments-loggedout.png)
 ![Screenshot of comments section with no comments, logged in](documentation/detailedpost-nocomments-loggedin.png)
 
-The detailed view of each post is accessible by clicking on the titles of the posts in the homepage. The slug feature of Django will direct the user to the specific url of each post, giving them the detailed view. When the user accesses the detailed view, the user will be able to see the full post content as well as the comments section. If there are no comments on the post, it will display the message 'it's lonely here'. If the user is NOT signed in, they will not see the textbox to be able to comment. If the user is signed in, they can leave a comment behind. 
+The detailed view of each post is accessible by clicking on the titles of the posts in the homepage. The slug feature of Django will direct the user to the specific url of each post, giving them the detailed view. When the user accesses the detailed view, the user will be able to see the full post content as well as the comments section. If there are no comments on the post, it will display the message 'it's lonely here'. If the user is NOT signed in, they will not see the textbox to be able to comment. If the user is signed in, they will have access to the comment textbox to leave a comment. 
 
 ![Screenshot of comments made by you among comments made by others](documentation/detailedpost-yourcommentsvsothers.png)
 ![Screenshot of message when commented](documentation/detailedview-commented.png)
@@ -230,7 +230,7 @@ In the comments section, users will be able to quickly identify their own commen
 ![Screenshot of message when post is raged](documentation/detailedview-raged.png)
 ![Screenshot of message when post is unraged](documentation/detailedview-unraged.png)
 
-If the user has raged (reacted to) the post, they will be able to see, beside the rage / comment counter below the featured image, that they have already raged to the post. The user is able to rage and unrage the posts. When users rage/unrage posts, a message banner will pop up at the top to communicate with the user that their action is confirmed. The rage button will be circular to inform the user that the rage icon is indeed a button that can be clicked. When hovered, the rage icon will disappear to help confirm the user that it is clickable. Users can only rage to other people's posts. 
+If the user has raged (reacted to) the post, they will be able to see, beside the rage/comment counter below the featured image, that they have raged to the post. The user is able to rage and unrage the posts. When users rage/unrage posts, a message banner will pop up at the top to communicate with the user that their action is confirmed. The rage button will be circular to inform the user that the rage icon is indeed a button that can be clicked. When hovered, the rage icon will disappear to help confirm the user that it is clickable. Users can only rage to other people's posts. 
 
 ![Screenshot of edited detailed posts](documentation/detailedpost-edited.png)
 
@@ -323,7 +323,7 @@ This project was made primarily with Django.
 ### Programs Used
 
 1. [Git](https://git-scm.com/)
-    - Git was used by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+    - Git was used by utilizing the Gitpod terminal to commit to Git and Push to GitHub. Version control. 
 
 2. [GitHub](https://github.com/)
     - GitHub was used to store the project code after being pushed in by Git. Project repository linked with Heroku for deployment process. GitHub was also used to create the kanban board. 
@@ -353,7 +353,7 @@ This project was made primarily with Django.
     - Cloudinary used to host the uploaded images.
 
 11. [Font Awesome](https://fontawesome.com/)
-    - Font Awesome was used for icons
+    - Font Awesome was used for icons.
 
 12. [Google Fonts](https://fonts.google.com/)
     - Google Fonts was used for the Permanent Marker and Oswald fonts. 
@@ -361,8 +361,8 @@ This project was made primarily with Django.
 13. [Favicon.io](https://favicon.io/)
     - Favicon.io was used for the favicon.
 
-14. [autopep8](https://pypi.org/project/autopep8/)
-    - Autopep8 was used to help organize Python code to match pep8 standards.
+14. [Autopep8](https://pypi.org/project/autopep8/)
+    - Autopep8 was used to help organize Python code to match PEP8 standards.
 
 15. Beautify
     - Beautify Command Palette on Git was used to organize the code in all files.
@@ -536,23 +536,25 @@ This project was made primarily with Django.
 
 ### Manual Testing
 
-The project has been tested heavily via manual testing. The website has been tested using Google DevTools > Inspect, with all of the different devices listed. All pages are responsive to all listed devices, even the Galaxy Fold! The website has been tested on MacBook 2022, MacBook 2020, iMac 2019, iPhone 13 Mini, iPhone 11, iPad Pro, OnePlus, and ASUS ROG. Multiple friends have tested out this website, raging about their own personal issues. I tested this out myself by creating many different accounts, making many posts, reacting to my posts, unreacting, ensuring that all respective messages are shown when unraged/raged/commented/comment deleted. I have created and deleted many posts and many comments to ensure everything is deleted properly. I made posts and comments with very long strings of text to ensure that all characters and text will remain within the container. I have tried tampering with the url to access edit_post and delete_post of a post made by a different author under a different user name and successfully reached the error page (however, this feature is not available for deleting comments). I have tried uploading a non jpeg/jpg/png file to create_post and edit_post and successfully tested the JavaScript message to show up. Lots of testing has been done to ensure the website works properly, and the code has been validated through respective validators. 
+The project has been tested heavily via manual testing. The website has been tested using Google DevTools > Inspect, with all of the different devices listed. All pages are responsive to all listed devices, even the Galaxy Fold! The website has been tested on MacBook 2022, MacBook 2020, iMac 2019, iPhone 13 Mini, iPhone 11, iPad Pro, OnePlus, and ASUS ROG. Multiple friends have tested out this website, raging about their own personal issues. I tested this out myself by creating many different accounts, making many posts, reacting to my posts, unreacting, ensuring that all respective messages are shown when unraged/raged/commented/comment deleted/posts created/post deleted/post edited. I have created and deleted many posts and many comments to ensure everything is deleted properly. I made posts and comments with very long strings of text to ensure that all characters and text will remain within the container. I have tried tampering with the url to access edit_post and delete_post of a post made by a different author under a different user name and successfully reached the error page (however, this feature is not available for deleting comments). I have tried uploading a non jpeg/jpg/png file to create_post and edit_post and successfully tested the JavaScript message to show up. Lots of testing has been done to ensure the website works properly, and the code has been validated through the respective validators. 
 
 ### Bugs
 
 Many bugs have been encountered while creating this project.
 
-- When running the JS file through JSHint the first time, there was an error for imageValidation being an unused variable. This was due to the function being called in the HTML file as 'onchange="imageValidation"'. In order to bypass this, I would remove the function from being called in HTML and create an addEventListener in JS. However, there were issues with my other eventListeners in my JS file. In my create_post.html, when trying to run the imageValidation function, the console would state that there was an error for my other eventListeners since there are no variables or properties matching signUpMessage and signUpHover (these would be available in the signup html page instead). After researching on Stack Overflow and speaking with Tutor Support, I created an if statement to check if these variables exist. The error disappeared and the imageValidation function now runs perfectly.
+- When running the JS file through JSHint the first time, there was an error that imageValidation was an unused variable. This was due to the function being called in the HTML file as 'onchange="imageValidation"' rather than from the script. I fixed this by removing the function from being called in the HTML and created an addEventListener in the JS script. However, there were issues with my other eventListeners in my JS file. In my create_post.html, when trying to run the imageValidation function, the console would state that there was an error for my other eventListeners since there are no variables or properties matching signUpMessage and signUpHover (these were available in the signup html page instead). After researching on Stack Overflow and speaking with Tutor Support, I created an if statement to check if these variables exist. The error disappeared and the imageValidation function now runs perfectly.
 
-- In the post_detailed_view.html page, I was trying to create an if else statement to display a paragraph to the user if there are no comments posted on the post. I wanted the paragraph to say "it's lonely here" if there are no comments, and to show the comments if there are comments. I was not able to get the if else statement correct, and it kept stating that there were no comments. After speaking with my mentor, I have incorrectly formatted my if else statement and he has guided me on the correct syntax.
+- In the post_detailed_view.html page, I was trying to create an if else statement to display a paragraph to the user if there are no comments posted on the post. I wanted the paragraph to say "it's lonely here" if there are no comments, and to show the comments if there are comments. I was not able to get the if else statement correct, as it kept stating that there were no comments. After speaking with my mentor, it turned out that I have incorrectly formatted my if else statement. He guided me through the correct syntax and now my if else statement correctly shows the comments if there are comments and the paragraph message if there are none. 
 
-- A big bug I ran into was trying to show the revised date of the post ONLY when a revision is made. In post_detailed_view.html, I wanted the post creation date to show up. If the user did NOT make an edit, I ONLY wanted the creation date to show. If the user made an edit, THEN it would show that the post was edited. I tried to create a if_revised function in views.py to check to see if creation date does not match revised date, for it to prove true that the post was indeed revised. However, in the html page, it would always show the revised dates, regardless if it was revised or not. I talked to Tutor Support, and it turns out that revised date and created date are in milliseconds so it will always show that they do not equal. I asked my mentor for support and he suggested to use a time delta to check the difference between created date and revised date. Using time delta to 1 second, I managed to get this feature added successfully. 
+- A big bug I ran into was trying to show the revised date of the post ONLY if a revision was made. In post_detailed_view.html, I wanted the post creation date to show up. If the user did NOT make an edit, I ONLY wanted the creation date to show. If the user made an edit, THEN it would show that the post was edited. I tried to create a if_revised function in views.py to check to see if creation date does not match revised date, for it to prove true that the post was indeed revised. However, in the html page, it would always show the revised dates, regardless if it was revised or not. I talked to Tutor Support, and it turns out that revised date and created date are in milliseconds so it will always show that they do not equal. I asked my mentor for support and he suggested to use a timedelta to check the difference between created date and revised date. Using timedelta to 1 second, I managed to get this feature added successfully. 
 
 - When deploying, I was running into failed deploy errors on Heroku. It turns out that I had downloaded crispy-forms and had it in my installed apps in settings.py, but actually have never used crispy-forms anywhere. I ended up having to uninstall crispy-forms and remove it from installed apps and the deployment worked successfully.
 
-- I ran into complications with using author as a foreignkey in my models.py Comment class. This is where my Django knowledge really had to be tested when creating ways to show the author of comments in the HTML, and how to delete comments. I received a lot of help from Tutor Support on creating the comment delete views.py function, by suggesting me to use DeleteView. Tutor Support and I worked together to solve how to redirect the user back to the post_detailed_view of the specific post that they were commenting on, after the comment is deleted.
+- I ran into complications with using author as a foreignkey in my models.py Comment class. This was when my Django knowledge really had to be tested by creating ways to show the author of comments in the HTML, and how to delete comments. I received a lot of help from Tutor Support on creating the comment delete views.py function, by suggesting me to use DeleteView. Tutor Support and I worked together to solve how to redirect the user back to the post_detailed_view of the specific post that they were commenting on, after the comment is deleted.
 
-- When first testing out the project after deploying, I noticed that the text would go over the container if the title or comments were very long strings. I managed to fix this by adding the Bootstrap class text-break. 
+- When first testing out the project after deploying, I noticed that the text would go over the container if the title or comments were very long strings. I managed to fix this by adding the Bootstrap class 'text-break'. 
+
+- After deploying, I realized the favicon does not show up on the deployed version. I then realized that the static file were not correctly uploaded. I fixed the syntax and now favicon is showing up on deployed website. 
 
 
 ## Deployment
@@ -622,16 +624,16 @@ Many bugs have been encountered while creating this project.
     - MDN Web Docs was referred to many times on general Django instructions.
 
 - Code Institute - I Think Therefore I Blog project
-    - The 'I Think Therefore I Blog' project was referred to many times on Django models, Django views, Django urls, the function to like and unlike posts, creating my HTML templates, and the idea of using Django's allauth for signing up, logging in, and logging out. The project was also referred to for the deployment process and how to install Cloudinary. 
+    - The 'I Think Therefore I Blog' project was referred to many times on the Django models, Django views, Django urls, the function to like and unlike posts, creating my HTML templates, and the idea of using Django's allauth for signing up, logging in, and logging out. The project was also referred to for the deployment process and how to install Cloudinary. 
 
 - [Damian Jacob](https://github.com/damianjacob)
     - Damian Jacob has helped me a lot with this project. His codes for the Django views URL validation and JavaScript file validation were used and cited. 
 
 - [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial)
-    - This website was referred to when using Django's slug feature. Slug function codes were copied from this website and inserted into the models.py file. The codes are cited in models.py.
+    - This website was referred to when using Django's slug feature. Slug function codes were copied from this website and inserted into the models.py file. The codes are cited in models.py and admin.py.
 
 - [freeCodeCamp.org YouTube](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
-    - This YouTube video uploaded by freeCodeCamp.org was referred to many times.
+    - This YouTube video uploaded by freeCodeCamp.org was referred to many times throughout the creation of this website.
 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
     - This website was referred to many times when creating views.py file. This website was extremely helpful with detailed view, create view, delete view, and update view. 

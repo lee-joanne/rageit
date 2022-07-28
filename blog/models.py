@@ -40,13 +40,13 @@ class Post(models.Model):
 
     def number_of_likes(self):
         """
-        Function to return the number of likes of post
+        Function to return the number of likes on post
         """
         return self.likes.count()
 
     def number_of_comments(self):
         """
-        Function to return number of comments of post
+        Function to return number of comments on post
         """
         return self.post_comment.count()
 
