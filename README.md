@@ -338,9 +338,11 @@ This project was made primarily with Django.
 
 ## Testing
 
-### Manual Testing
+### Validation Testing & Lighthouse
 
-- HTML Validation (W3C HTML): 
+- HTML Validation (W3C HTML):
+
+All passed with no errors.
 
 <details>
 <summary>Screenshot of HTML Validation: Homepage</summary>
@@ -389,6 +391,8 @@ This project was made primarily with Django.
 
 - CSS Validation (W3C CSS):
 
+Passed with no errors.
+
 <details>
 <summary>Screenshot of CSS validation</summary>
 <img src='documentation/css-validation.png' alt='CSS validation'>
@@ -396,7 +400,7 @@ This project was made primarily with Django.
 
 - JavaScript Validation (JSHint):
 
-Only error shown is that imageValidation is an unused variable because this function is called in the HTML instead of the script file.
+Only error shown is that imageValidation is an unused variable because this function is called in the HTML instead of the script file. This function is called in create_post.html and update_post.html templates.
 
 <details>
 <summary>Screenshot of JavaScript validation</summary>
@@ -404,6 +408,8 @@ Only error shown is that imageValidation is an unused variable because this func
 </details>
 
 - Python Validation (PEP8): 
+
+The settings.py file has not gone through the PEP8 validation due to the fragile and delicate nature of the file. Any unwanted tampering or modifications may break the project. Therefore, only the other Python files have been checked and validated.  
 
 <details>
 <summary>Screenshot of Python Validation: Admin</summary>
@@ -442,7 +448,59 @@ Only error shown is that imageValidation is an unused variable because this func
 
 - Lighthouse
 
+<details>
+<summary>Screenshot of Lighthouse Score: Homepage</summary>
+<img src='documentation/lighthouse-homepage.png' alt='lighthouse score'>
+</details>
 
+<details>
+<summary>Screenshot of Lighthouse Score: Homepage Best Practices</summary>
+<img src='documentation/lighthouse-homepage-bestpractices.png' alt='lighthouse score'>
+</details>
+
+The homepage scored 83 for best practices. When looking into the score further, it seems to be due to low image resolution. These images appear to be from the user's featured images. Therefore, if the user uploads low-resolution photos, then the Lighthouse score will be lower.
+
+<details>
+<summary>Screenshot of Lighthouse Score: Detailed View</summary>
+<img src='documentation/lighthouse-detailedpost.png' alt='lighthouse score'>
+</details>
+
+<details>
+<summary>Screenshot of Lighthouse Score: Create Post</summary>
+<img src='documentation/lighthouse-createpost.png' alt='lighthouse score'>
+</details>
+
+<details>
+<summary>Screenshot of Lighthouse Score: Logout</summary>
+<img src='documentation/lighthouse-logout.png' alt='lighthouse score'>
+</details>
+
+<details>
+<summary>Screenshot of Lighthouse Score: Update Post</summary>
+<img src='documentation/lighthouse-updatepost.png' alt='lighthouse score'>
+</details>
+
+<details>
+<summary>Screenshot of Lighthouse Score: Delete Post</summary>
+<img src='documentation/lighthouse-deletepost.png' alt='lighthouse score'>
+</details>
+
+<details>
+<summary>Screenshot of Lighthouse Score: Login</summary>
+<img src='documentation/lighthouse-login.png' alt='lighthouse score'>
+</details>
+
+<details>
+<summary>Screenshot of Lighthouse Score: Signup</summary>
+<img src='documentation/lighthouse-signup.png' alt='lighthouse score'>
+</details>
+
+<details>
+<summary>Screenshot of Lighthouse Score: Comment Delete</summary>
+<img src='documentation/lighthouse-commentdelete.png' alt='lighthouse score'>
+</details>
+
+### Manual Testing
 
 ### Bugs
 

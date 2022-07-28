@@ -1,8 +1,10 @@
 let signUpMessage = document.getElementById("signup-message");
 let signUpHover = document.getElementById("signup-hover");
+let postImage = document.getElementById("post_image");
 
 signUpHover.addEventListener("mouseover", showMessage);
 signUpHover.addEventListener("mouseout", hideMessage);
+postImage.addEventListener("change", imageValidation);
 
 function showMessage() {
     /*
@@ -23,7 +25,6 @@ function imageValidation() {
     Function to ensure images match jpeg, jpg, or png before submission.
     Code is taken from Damian Jacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
     */
-    let postImage = document.getElementById("post_image");
     let errorMessage = document.getElementById("image-upload-errormessage");
 
     let fileType = postImage.value;
