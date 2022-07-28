@@ -34,7 +34,7 @@
 
 [View live project here](https://rageit.herokuapp.com/)
 
-Welcome to RAGEit, the blog where you can rage freely and vent away your anger, frustration, and sadness. The blog is completely anonymous as you do not need an email address to sign up, which allows you to vent with freedom. You can make posts, upload an image to your post, comment on other people's posts, and like posts ('rage' at posts, actually). So what are you waiting for? Release your anger!
+Welcome to RAGEit, the blog where you can rage freely and vent away your anger, frustration, and sadness. The blog is completely anonymous so you do not need an email address to sign up, which allows you to vent with freedom. You can make posts, upload an image to your post, comment on other people's posts, and like posts ('rage' at posts, actually). So what are you waiting for? Release your anger!
 
 ![Screenshot of Am I Responsive of homepage](documentation/amiresponsive.png)
 
@@ -83,7 +83,7 @@ Welcome to RAGEit, the blog where you can rage freely and vent away your anger, 
 - Data model has been created using the program Whimsical
 ![Screenshot of Data Model](documentation/datamodel.png)
 
-    - This is the initial data model idea. While creating the project, decided not to include the Comment features such as updated on and featured image. Comment also uses foreignkey for author/username so that users can delete their comments.
+    - This is the initial data model idea. While creating the project, decided not to include the Comment features such as updated on and featured image. Comment class uses foreignkey for author/username so that users can delete their comments.
 
 ### Design
 
@@ -93,7 +93,7 @@ Welcome to RAGEit, the blog where you can rage freely and vent away your anger, 
     2. White
     3. Black
 
-    - The main colours I have selected for this website are red (#5F021F), white, and black. I chose red because I wanted the colour to match the theme of the blog, which is all about rage. I wanted to keep the colours minimalistic so I have red (#5F021F) as the main colour, white font if the background is (#5F021F), and black font if the background is white. I used red (#5F021F) as the hover colour for the post titles (links) to keep to the red theme. The main posts have the red (#5F021F) background and white font. 
+    - The main colours I have selected for this website are red (#5F021F), white, and black. I chose red because I wanted the colour to match the theme of the blog, which is all about rage. I wanted to keep the colours minimalistic so I have red (#5F021F) as the main colour, white font if the background is (#5F021F), and black font if the background is white. I used red (#5F021F) as the hover colour for the post titles (links) to keep to the red theme. The main posts have the red (#5F021F) background and white font. The fonts were taken from Google Fonts. 
 
  - Typography
 
@@ -125,7 +125,7 @@ Welcome to RAGEit, the blog where you can rage freely and vent away your anger, 
 ![Screenshot of Kanban board 2](documentation/kanbanboard2.png)
 ![Screenshot of Kanban board 3](documentation/kanbanboard3.png)
 
-I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they are completed, they would be dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as either Must Have or Should Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks by the end. 
+I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they were completed, they were dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as either Must Have or Should Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks in the end. 
 
 ## Features
 
