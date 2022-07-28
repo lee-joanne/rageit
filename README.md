@@ -340,6 +340,108 @@ This project was made primarily with Django.
 
 ### Manual Testing
 
+- HTML Validation (W3C HTML): 
+
+<details>
+<summary>Screenshot of HTML Validation: Homepage</summary>
+<img src='documentation/html-homepage.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Create Post</summary>
+<img src='documentation/html-createpost.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Detailed Post</summary>
+<img src='documentation/html-detailedpost.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Logout</summary>
+<img src='documentation/html-logout.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Signup</summary>
+<img src='documentation/html-signup.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Login</summary>
+<img src='documentation/html-login.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Update Post</summary>
+<img src='documentation/html-updatepost.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Delete Post</summary>
+<img src='documentation/html-deletepost.png' alt='html validation'>
+</details>
+
+<details>
+<summary>Screenshot of HTML Validation: Delete Comment</summary>
+<img src='documentation/html-commentdelete.png' alt='html validation'>
+</details>
+
+- CSS Validation (W3C CSS):
+
+<details>
+<summary>Screenshot of CSS validation</summary>
+<img src='documentation/css-validation.png' alt='CSS validation'>
+</details>
+
+- JavaScript Validation (JSHint):
+
+Only error shown is that imageValidation is an unused variable because this function is called in the HTML instead of the script file.
+
+<details>
+<summary>Screenshot of JavaScript validation</summary>
+<img src='documentation/javascript-validation.png' alt='javascript validation'>
+</details>
+
+- Python Validation (PEP8): 
+
+<details>
+<summary>Screenshot of Python Validation: Admin</summary>
+<img src='documentation/python-admin.png' alt='pep8 validation'>
+</details>
+
+<details>
+<summary>Screenshot of Python Validation: Apps</summary>
+<img src='documentation/python-app.png' alt='pep8 validation'>
+</details>
+
+<details>
+<summary>Screenshot of Python Validation: Forms</summary>
+<img src='documentation/python-form.png' alt='pep8 validation'>
+</details>
+
+<details>
+<summary>Screenshot of Python Validation: Models</summary>
+<img src='documentation/python-models.png' alt='pep8 validation'>
+</details>
+
+<details>
+<summary>Screenshot of Python Validation: Urls</summary>
+<img src='documentation/python-urls.png' alt='pep8 validation'>
+</details>
+
+<details>
+<summary>Screenshot of Python Validation: Views</summary>
+<img src='documentation/python-views.png' alt='pep8 validation'>
+</details>
+
+<details>
+<summary>Screenshot of Python Validation: Rageit/Urls</summary>
+<img src='documentation/python-rageit-urls.png' alt='pep8 validation'>
+</details>
+
+- Lighthouse
+
 
 
 ### Bugs
