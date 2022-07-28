@@ -262,29 +262,85 @@ In the future, I wish to implement my original data model of the comments being 
 
 ## Technologies Used
 
+This project was made primarily with Django.
+
 ### Languages and Packages/Libraries Used
 
-### Frameworks, Libraries & Programs Used
+1. [Django](https://www.djangoproject.com/)
+
+2. [Python](https://www.python.org/)
+
+3. [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+4. [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+5. [JavaScript](https://www.javascript.com/)
+
+6. [psycopg2](https://pypi.org/project/psycopg2/)
+
+7. [Django allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+8. [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+
+9. [gunicorn](https://gunicorn.org/)
+
+10. [PostgreSQL](https://www.postgresql.org/)
+
+### Programs Used
 
 1. [Git](https://git-scm.com/)
     - Git was used by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
 2. [GitHub](https://github.com/)
-    - GitHub was used to store the project code after being pushed in by Git. Project repository linked with Heroku for deployment process. 
+    - GitHub was used to store the project code after being pushed in by Git. Project repository linked with Heroku for deployment process. GitHub was also used to create the kanban board. 
 
 3. [Heroku](https://dashboard.heroku.com/login)
     - Heroku was used to deploy the Python project as a terminal based game after signing in with GitHub. 
 
 4. [Whimsical](https://whimsical.com)
-    - Whimsical was used to create the flowchart for the game. 
+    - Whimsical was used to create the data model and the wireframes for the project. 
 
 5. [PEP8 Online Check](http://pep8online.com/)
     - PEP8 Online Check was used to validate the Python code used and check for warnings/errors. 
 
-6.  [Ecotrust-Canada Markdown-toc](https://ecotrust-canada.github.io/markdown-toc/)
+6. [Ecotrust-Canada Markdown-toc](https://ecotrust-canada.github.io/markdown-toc/)
     - Ecotrust-Canada Markdown was used to create the table of contents for this README. 
 
+7. [W3C Validator](https://validator.w3.org/)
+    - W3C validator used to check the HTML5 code.
+
+8. [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    - W3C CSS validator used to check the CSS3 code.
+
+9. [JSHint](https://jshint.com/)
+    - JSHint used to check the JavaScript code. 
+
+10. [Cloudinary](https://cloudinary.com/)
+    - Cloudinary used to host the uploaded images.
+
+11. [Font Awesome](https://fontawesome.com/)
+    - Font Awesome was used for icons
+
+12. [Google Fonts](https://fonts.google.com/)
+    - Google Fonts was used for the Permanent Marker and Oswald fonts. 
+
+13. [Favicon.io](https://favicon.io/)
+    - Favicon.io was used for the favicon.
+
+14. [autopep8](https://pypi.org/project/autopep8/)
+    - Autopep8 was used to help organize Python code to match pep8 standards.
+
+15. Beautify
+    - Beautify Command Palette on Git was used to organize the code in all files.
+
+16. [Coolors](https://coolors.co/)
+    - Coolors was used to get the specific red (#5F021F) colour used in the project. 
+
 ## Testing
+
+### Manual Testing
+
+
 
 ### Bugs
 
