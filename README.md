@@ -2,7 +2,7 @@
 
 [View live project here](https://rageit.herokuapp.com/)
 
-Welcome to RAGEit! The blog where you can rage freely and vent away your anger, frusturation, and sadness. The blog is completely anonymous as you do not need an email address to sign up, which allows you to vent with freedom. You can make posts, upload an image to your post, comment on other people's posts, and like posts ('rage' at posts, actually). So what are you waiting for? Release your anger!
+Welcome to RAGEit, the blog where you can rage freely and vent away your anger, frustration, and sadness. The blog is completely anonymous as you do not need an email address to sign up, which allows you to vent with freedom. You can make posts, upload an image to your post, comment on other people's posts, and like posts ('rage' at posts, actually). So what are you waiting for? Release your anger!
 
 ![Screenshot of Am I Responsive of homepage](documentation/amiresponsive.png)
 
@@ -51,7 +51,7 @@ Welcome to RAGEit! The blog where you can rage freely and vent away your anger, 
 - Data model has been created using the program Whimsical
 ![Screenshot of Data Model](documentation/datamodel.png)
 
-    - This is the initial data model idea. While creating the project, decided not to include the comment features such as updated on and featured image. Comment also uses foreignkey for author/username so that users are able to delete their comments.
+    - This is the initial data model idea. While creating the project, decided not to include the comment features such as updated on and featured image. Comment also uses foreignkey for author/username so that users can delete their comments.
 
 ### Design
 
@@ -69,7 +69,7 @@ Welcome to RAGEit! The blog where you can rage freely and vent away your anger, 
     2. Oswald
     3. Sans Serif (fallback)
 
-    - The main logo at the top left corner (h1) is written with the Permanent Marker font, and the rest of the text is used with Oswald, with sans serif as the fallback font. Permanent Marker is used for the aggressive-nature of the font which is to help highlight the theme of the blog. Oswald was used for it's easy readability and simplistic style.
+    - The main logo at the top left corner (h1) is written with the Permanent Marker font, and the rest of the text is used with Oswald, with sans serif as the fallback font. Permanent Marker is used for the aggressive nature of the font which is to help highlight the theme of the blog. Oswald was used for its easy readability and simplistic style.
 
 ### Wireframes
 
@@ -123,18 +123,18 @@ User stories covered in Logo and Navbar:
 ![Screenshot of homepage posts on desktop](documentation/homepage-posts.png)
 ![Screenshot of homepage posts on mobile](documentation/homepage-mobile.png)
 
-The homepage of the website shows a red banner that gives the user a brief introduction or explanation of the blog. In bigger screens, the posts are shown in columns of two and in smaller screens, one column for easy readability. The posts are shown with the featured image at the top, the post title in capital letters (to enhance the anger), a brief excerpt of the post (up to 200 characters), the username who made the post, the date when it was posted, and how many 'rages' and comments it has. The excerpt is there so the user can get a brief reading of the post before committing and clicking on the post to read further. The posts are ordered newest first so the users can get the latest rage posts. The post title is clickable (when hovered, becomes red (#5F021F)) which would take the user to the detailed view of the post. 
+The homepage of the website shows a red banner that gives the user a brief introduction or explanation of the blog. On bigger screens, the posts are shown in columns of two and on smaller screens, one column for easy readability. The posts are shown with the featured image at the top, the post title in capital letters (to enhance the anger), a brief excerpt of the post (up to 200 characters), the username who made the post, the date when it was posted, and how many 'rages' and comments it has. The excerpt is there so the user can get a brief reading of the post before committing and clicking on the post to read further. The posts are ordered newest first so the users can get the latest rage posts. The post title is clickable (when hovered, becomes red (#5F021F)) which would take the user to the detailed view of the post. 
 
 ![Screenshot of homepage post if made by user](documentation/homepage-signedin.png)
 
-If the user is the author of the post, they are able to see 'edit' and 'delete'. This is there so the user can immediately see that they are the author of the post, and have quick and easy access to edit and delete the post from the homepage. 
+If the user is the author of the post, they can see 'edit' and 'delete'. This is there so the user can immediately see that they are the author of the post, and have quick and easy access to edit and delete the post from the homepage. 
 
 ![Screenshot of homepage message when user signs in](documentation/signedin-message.png)
 ![Screenshot of homepage message when user signs out](documentation/signedout-message.png)
 ![Screenshot of homepage message when user edits post](documentation/editedpost-message.png)
 ![Screenshot of homepage message when user deletes post](documentation/deletedpost-message.png)
 
-The homepage also displays confirmation messages to the user as shown in these series of screenshots. The homepage displays messages such as when the user signs in, signs out, edits a post, or deletes a post. These messages are vital to communiate with the user when they perform a task to help confirm their task is completed or achieved. 
+The homepage also displays confirmation messages to the user as shown in these series of screenshots. The homepage displays messages such as when the user signs in, signs out, edits a post, or deletes a post. These messages are vital to communicate with the user when they perform a task to help confirm their task is completed or achieved. 
 
 User stories covered in homepage:
 
@@ -154,7 +154,7 @@ User stories covered in homepage:
 ![Screenshot of login page](documentation/login-page.png)
 ![Screenshot of sign out page](documentation/logout-page.png)
 
-Using Django's allauth, users are able to sign up, login, and logout easily. The allauth templates were edited to match the base template of RAGEit. These links are accessed via the navbar. When these links are clicked, it will take the user to a separate page for each option. The signup page contains an arrow which, when hovered, explains RAGEit's views on privacy and reasoning for email addresses to be optional. This function was created using basic JavaScript. When the user tries to log out, it will ask the user for confirmation before logging out the user. 
+Using Django's allauth, users are able to sign up, login, and logout easily. The allauth templates were edited to match the base template of RAGEit. These links are accessed via the navbar. When these links are clicked, it will take the user to a separate page for each option. The signup page contains an arrow that, when hovered, explains RAGEit's views on privacy and reasoning for email addresses to be optional. This function was created using basic JavaScript. When the user tries to log out, it will ask the user for confirmation before logging out the user. 
 
 User stories covered in Sign Up/Login/Logout: 
 
@@ -185,14 +185,14 @@ User stories covered in Creating A Post:
 ![Screenshot of comments section with no comments, logged out](documentation/detailedpost-nocomments-loggedout.png)
 ![Screenshot of comments section with no comments, logged in](documentation/detailedpost-nocomments-loggedin.png)
 
-The detailed view of each post is accessible by clicking on the titles of the posts in the homepage. The slug feature of Django will direct the user to the specific url of each post, giving them the detailed view. When the user accesses the detailed view, the user will be able to see the full post content as well as the comments section. If there are no comments on the post, it will display the message 'it's lonely here'. If the user is NOT signed in, they will not see the textbox to be able to comment. If the user is signed in, they are able to leave a comment behind. 
+The detailed view of each post is accessible by clicking on the titles of the posts in the homepage. The slug feature of Django will direct the user to the specific url of each post, giving them the detailed view. When the user accesses the detailed view, the user will be able to see the full post content as well as the comments section. If there are no comments on the post, it will display the message 'it's lonely here'. If the user is NOT signed in, they will not see the textbox to be able to comment. If the user is signed in, they can leave a comment behind. 
 
 ![Screenshot of comments made by you among comments made by others](documentation/detailedpost-yourcommentsvsothers.png)
 ![Screenshot of message when commented](documentation/detailedview-commented.png)
 ![Screenshot of confirmation to delete comment](documentation/detailedview-confirmdelete.png)
 ![Screenshot of message when comment deleted](documentation/detailedview-deletedcomment.png)
 
-In the comments section, users will be able to quickly identify their own comments from comments made by others as it will display the option to delete their comment. The comments will show the username of the commenter and the date the comment was made. When the user makes as comment, a message banner will show confirming that the comment is live. If the user wishes to delete their comment, they can click the 'delete comment' button which will redirect them to another page to confirm the deletion. Once the user confirms, the user will be redirected to the post and there will be a banner confirming the user's comment is deleted.
+In the comments section, users will be able to quickly identify their own comments from comments made by others as it will display the option to delete their comments. The comments will show the username of the commenter and the date the comment was made. When the user makes a comment, a message banner will show confirming that the comment is live. If the user wishes to delete their comment, they can click the 'delete comment' button which will redirect them to another page to confirm the deletion. Once the user confirms, the user will be redirected to the post and there will be a banner confirming the user's comment is deleted.
 
 ![Screenshot of confirmation of your react on post](documentation/detailedpost-youraged-youcommented.png)
 ![Screenshot of message when post is raged](documentation/detailedview-raged.png)
@@ -238,7 +238,7 @@ User stores covered in Editing A Post:
 
 ![Screenshot of deleting post](documentation/deletingpost.png)
 
-When users try to delete their own posts (accessed via homepage or in detailed post view), they will be redirected to a new page. The page will ask for confirmation if the user wishes to go ahead with their deletion and shows the title of the post they wish to delete. The user then can confirm whether they want to delete or not. If user who is NOT the author tries to access the url page to delete, it will throw an error that the user is forbidden to enter, to protect the author's posts.
+When users try to delete their posts (accessed via homepage or in detailed post view), they will be redirected to a new page. The page will ask for confirmation if the user wishes to go ahead with their deletion and shows the title of the post they wish to delete. The user then can confirm whether they want to delete or not. If the user is NOT the author tries to access the url page to delete, it will throw an error that the user is forbidden to enter, to protect the author's posts.
 
 User stories covered in Deleting A Post:
 
@@ -297,7 +297,7 @@ This project was made primarily with Django.
     - GitHub was used to store the project code after being pushed in by Git. Project repository linked with Heroku for deployment process. GitHub was also used to create the kanban board. 
 
 3. [Heroku](https://dashboard.heroku.com/login)
-    - Heroku was used to deploy the Python project as a terminal based game after signing in with GitHub. 
+    - Heroku was used to deploy this project. Heroku's Postgres was used as the database.  
 
 4. [Whimsical](https://whimsical.com)
     - Whimsical was used to create the data model and the wireframes for the project. 
@@ -504,7 +504,7 @@ This project was made primarily with Django.
 
 ### Manual Testing
 
-The project has been tested heavily via manual testing. The website has been tested using Google DevTools > Inspect, with all of the different devices listed. All pages are responsive to all listed devices, even the Galaxy Fold! The website has been tested on MacBook 2022, MacBook 2020, iMac 2019, iPhone 13 Mini, iPhone 11, iPad Pro, OnePlus, and ASUS ROG. Multiple friends have tested out this website, raging about their own personal issues. I tested this out myself by creating many different accounts, making many posts, reacting to my posts, unreacting, ensuring that all respective messages are shown when unraged/raged/commented/comment deleted. I have created and deleted many posts and many comments to ensure everything is deleted properly. I made posts and comments with very long string of text to ensure that all characters and text will remain within the container. I have tried tampering with the url to access edit_post and delete_post of a post made by a different author under a different user name and successfully reached the error page (however, this feature is not available for deleting comments). I have tried uploading a non jpeg/jpg/png file to create_post and edit_post and successfully tested the JavaScript message to show up. Lots of testing has been done to ensure the website works properley, and the code have been validated through respective validators. 
+The project has been tested heavily via manual testing. The website has been tested using Google DevTools > Inspect, with all of the different devices listed. All pages are responsive to all listed devices, even the Galaxy Fold! The website has been tested on MacBook 2022, MacBook 2020, iMac 2019, iPhone 13 Mini, iPhone 11, iPad Pro, OnePlus, and ASUS ROG. Multiple friends have tested out this website, raging about their own personal issues. I tested this out myself by creating many different accounts, making many posts, reacting to my posts, unreacting, ensuring that all respective messages are shown when unraged/raged/commented/comment deleted. I have created and deleted many posts and many comments to ensure everything is deleted properly. I made posts and comments with very long strings of text to ensure that all characters and text will remain within the container. I have tried tampering with the url to access edit_post and delete_post of a post made by a different author under a different user name and successfully reached the error page (however, this feature is not available for deleting comments). I have tried uploading a non jpeg/jpg/png file to create_post and edit_post and successfully tested the JavaScript message to show up. Lots of testing has been done to ensure the website works properly, and the code has been validated through respective validators. 
 
 ### Bugs
 
@@ -527,7 +527,7 @@ Many bugs have been encountered while creating this project.
 
 - The following steps were taken for the deployment process (taken from the I Think Therefore I Blog project):
 
-    **Project creation and initial deplyoment**
+    **Project creation and initial deployment**
     1. Ensure that the template used for the project is made with the Code Institute template linked [here](https://github.com/Code-Institute-Org/gitpod-full-template). 
     2. Using pip3, install **[Django gunicorn](https://www.djangoproject.com/)**
     3. Using pip3, install **dj_database_url psycopg2**
@@ -548,7 +548,7 @@ Many bugs have been encountered while creating this project.
     17. In **SECRET_KEY** section in **settings.py**, import os.environ **SECRET_KEY**.
     18. In **settings.py**, comment out the **DATABASES** and add in **DATABASES** to add **dj_database_url** from **env.py** file. 
     19. In Heroku, add another **Config var**, KEY: PORT/ Value: 8000
-    20. Create a [Cloudinary account](https://cloudinary.com/). Copy the **API Environemnt variable**
+    20. Create a [Cloudinary account](https://cloudinary.com/). Copy the **API Environment variable**
     21. In Gitpod, in **env.py**, add in the **CLOUDINARY_URL** and paste the **API Environment variable**.
     22. In Heroku, create another **Config var** for **CLOUDINARY_URL** and paste in the value from **API Environment variable**
     23. In Heroku, add another key for **DISABLE_COLLECTSTATIC** and set it to **1** since there are no static files currently. 
@@ -612,7 +612,7 @@ Many bugs have been encountered while creating this project.
 
 ### Acknowledgements
 
-Big thank you to my mentor for all of his support and help. Also really appreciate the Code Institute Slack channel for always being available and being super friendly helping me with my questions! Thank you to fellow Code Institute students such as Ian Meigh for testing my project and providing support throughout the development process. Most of all, massive thank you to Code Institute Tutor Support for helping me A LOT during this project!
+Big thank you to my mentor for all of his support and help. Also really appreciate the Code Institute Slack channel for always being available and being super friendly helping me with my questions! Thank you to fellow Code Institute students such as Ian Meigh for testing my project and providing support throughout the development process. Most of all, a massive thank you to Code Institute Tutor Support for helping me A LOT during this project!
 
 
 
