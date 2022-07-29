@@ -93,7 +93,7 @@ Welcome to RAGEit, the blog where you can rage freely and vent away your anger, 
     2. White
     3. Black
 
-    - The main colours I have selected for this website are red (#5F021F), white, and black. I chose red because I wanted the colour to match the theme of the blog, which is all about rage. I wanted to keep the colours minimalistic so I have red (#5F021F) as the main colour, white font if the background is (#5F021F), and black font if the background is white. I used red (#5F021F) as the hover colour for the post titles (links) to keep to the red theme. The main posts have the red (#5F021F) background and white font. The fonts were taken from Google Fonts. 
+    - The main colours I have selected for this website are red (#5F021F), white, and black. I chose red because I wanted the colour to match the theme of the blog, which is all about rage. I wanted to keep the colours minimalistic so I have red (#5F021F) as the main colour, white for the font if the background is red (#5F021F), and black for the font if the background is white. I used red (#5F021F) as the hover colour for the post titles (links) to keep to the red theme. The main posts have the red (#5F021F) background and white font. The red colour was discovered on Coolors.co. 
 
  - Typography
 
@@ -101,7 +101,7 @@ Welcome to RAGEit, the blog where you can rage freely and vent away your anger, 
     2. Oswald
     3. Sans Serif (fallback)
 
-    - The main logo at the top left corner (h1) is written with the Permanent Marker font, and the rest of the text is used with Oswald, with sans serif as the fallback font. Permanent Marker is used for the aggressive nature of the font which is to help highlight the theme of the blog. Oswald was used for its easy readability and simplistic style.
+    - The main logo at the top left corner (h1) is written with the Permanent Marker font, and the rest of the text is written in Oswald, with sans serif as the fallback font. Permanent Marker is used for the aggressive nature of the font which is to help highlight the theme of the blog. Oswald was used for its easy readability and simplistic style. The fonts were taken from Google Fonts. 
 
 ### Wireframes
 
@@ -137,7 +137,7 @@ I used a kanban board to help organize the user stories and tasks required for t
 ![Screenshot of logo and navbar desktop signed in](documentation/logo-navbar-desktop-signedin.png)
 ![Screenshot of logo and navbar mobile not signed in](documentation/logo-navbar-mobile.png)
 
-For the h1 logo, I used the Permanent Marker font to help define the theme of the blog. When the user is not signed in, the navbar will show 'Login' and 'Sign Up' as options. When the user is signed in, the navbar will say 'hello' with the username beside it to confirm the username to the user. The navbar will also show an option to create a post, and to log out. The navbar links and logo are in red (#5F021F) to help show that they are clickable links, and the username name is in black to show that it is not clickable. When the navigation links are hovered, it will become white so the user receives feedback that the links are clickable. In smaller screens, the navbar will become a hamburger button that will become expandable when clicked. The navbar is fixed at the top so it will always remain at the top when the user scrolls down. This is added to enhance the user experience so that the user does not need to scroll all the way up when they want to access the navigation links.
+For the h1 logo, I used the Permanent Marker font to help define the theme of the blog. When the user is not signed in, the navbar will show 'Login' and 'Sign Up' as options. When the user is signed in, the navbar will say 'hi' with the username beside it to confirm the username to the user. The navbar will also show an option to create a post, and to log out. The navbar links and logo are in red (#5F021F) to help show that they are clickable links, and the username name is in black to show that it is not clickable. When the navigation links are hovered, it will become white so the user receives feedback that the links are clickable. In smaller screens, the navbar will become a hamburger button that will become expandable when clicked. The navbar is fixed at the top so it will always remain at the top when the user scrolls down. This is added to enhance the user experience so that the user does not need to scroll all the way up when they want to access the navigation links.
 
 User stories covered in Logo and Navbar:
 
@@ -155,7 +155,7 @@ User stories covered in Logo and Navbar:
 ![Screenshot of homepage posts on desktop](documentation/homepage-posts.png)
 ![Screenshot of homepage posts on mobile](documentation/homepage-mobile.png)
 
-The homepage of the website shows a red banner that gives the user a brief introduction or explanation of the blog. On bigger screens, the posts are shown in columns of two and on smaller screens, one column for easy readability. The posts are shown with the featured image at the top, the post title in capital letters (to enhance the anger), a brief excerpt of the post (up to 200 characters), the author of the post, the date when it was posted, and how many 'rages' and comments it has. The excerpt is there so the user can get a brief reading of the post before committing and clicking on the post to read further. The posts are ordered newest first so the users can get the latest rage posts. The post title is clickable (when hovered, becomes red (#5F021F)) which would take the user to the detailed view of the post. 
+The homepage of the website shows a red banner that gives the user a brief introduction/explanation of the blog. On bigger screens, the posts are shown in columns of two and on smaller screens, one column for easy readability. The posts are shown with the featured image at the top, the post title in capital letters (to enhance the anger), a brief excerpt of the post (up to 200 characters), the author of the post, the date when it was posted, and how many 'rages' and comments it has. The excerpt is there so the user can get a brief reading of the post before committing and clicking on the post to read further. The posts are ordered newest first so the users can get the latest rage posts. The post title is clickable (when hovered, becomes red (#5F021F)) which would take the user to the detailed view of the post. 
 
 ![Screenshot of homepage post if made by user](documentation/homepage-signedin.png)
 
@@ -536,7 +536,7 @@ This project was made primarily with Django.
 
 ### Manual Testing
 
-The project has been tested heavily via manual testing. The website has been tested using Google DevTools > Inspect, with all of the different devices listed. All pages are responsive to all listed devices, even the Galaxy Fold! The website has been tested on MacBook 2022, MacBook 2020, iMac 2019, iPhone 13 Mini, iPhone 11, iPad Pro, OnePlus, and ASUS ROG. Multiple friends have tested out this website, raging about their own personal issues. I tested this out myself by creating many different accounts, making many posts, reacting to my posts, unreacting, ensuring that all respective messages are shown when unraged/raged/commented/comment deleted/posts created/post deleted/post edited. I have created and deleted many posts and many comments to ensure everything is deleted properly. I made posts and comments with very long strings of text to ensure that all characters and text will remain within the container. I have tried tampering with the url to access edit_post and delete_post of a post made by a different author under a different user name and successfully reached the error page (however, this feature is not available for deleting comments). I have tried uploading a non jpeg/jpg/png file to create_post and edit_post and successfully tested the JavaScript message to show up. Lots of testing has been done to ensure the website works properly, and the code has been validated through the respective validators. 
+The project has been tested heavily via manual testing. The website has been tested using Google DevTools > Inspect, with all of the different devices listed. All pages are responsive to all listed devices, even the Galaxy Fold! The website has been tested on MacBook 2022, MacBook 2020, iMac 2019, iPhone 13 Mini, iPhone 11, iPad Pro, OnePlus, and ASUS ROG. Multiple friends have tested out this website, raging about their own personal issues. I tested this out myself by creating many different accounts, making many posts, reacting to my posts, unreacting, ensuring that all respective messages are shown when unraged/raged/commented/comment deleted/posts created/post deleted/post edited. I have created and deleted many posts and many comments to ensure everything is deleted properly. I made posts and comments with very long strings of text to ensure that all characters and text will remain within the container. I have tried tampering with the url to access edit_post and delete_post of a post made by a different author under a different user name and successfully reached the error page (however, this feature is not available for deleting comments). I have tried uploading a non jpeg/jpg/png file to create_post and edit_post and successfully tested the JavaScript message to show up. The Bootstrap feature of having the fixed navbar works perfectly on all mobiles as well, so users do not need to scroll all the way up if they want to create a post, log in or out, or sign up. All messages are communicated with the user, and signing out or deleting a post will always ask the user for confirmation first. When the user has raged to the post already, it will always show 'you raged this' beside the rage/comment counter. I have edited posts and kept or changed the featured photo and the website would behave perfectly, either changing to the new photo or keeping the old photo. Lots of testing has been done to ensure the website works properly, and the code has been validated through the respective validators. 
 
 ### Bugs
 
@@ -546,7 +546,7 @@ Many bugs have been encountered while creating this project.
 
 - In the post_detailed_view.html page, I was trying to create an if else statement to display a paragraph to the user if there are no comments posted on the post. I wanted the paragraph to say "it's lonely here" if there are no comments, and to show the comments if there are comments. I was not able to get the if else statement correct, as it kept stating that there were no comments. After speaking with my mentor, it turned out that I have incorrectly formatted my if else statement. He guided me through the correct syntax and now my if else statement correctly shows the comments if there are comments and the paragraph message if there are none. 
 
-- A big bug I ran into was trying to show the revised date of the post ONLY if a revision was made. In post_detailed_view.html, I wanted the post creation date to show up. If the user did NOT make an edit, I ONLY wanted the creation date to show. If the user made an edit, THEN it would show that the post was edited. I tried to create a if_revised function in views.py to check to see if creation date does not match revised date, for it to prove true that the post was indeed revised. However, in the html page, it would always show the revised dates, regardless if it was revised or not. I talked to Tutor Support, and it turns out that revised date and created date are in milliseconds so it will always show that they do not equal. I asked my mentor for support and he suggested to use a timedelta to check the difference between created date and revised date. Using timedelta to 1 second, I managed to get this feature added successfully. 
+- A big bug I ran into was trying to show the revised date of the post ONLY if a revision was made. In post_detailed_view.html, I wanted the post creation date to show up. If the user did NOT make an edit, I ONLY wanted the creation date to show. If the user made an edit, THEN it would show that the post was edited. I tried to create a if_revised function in views.py to check to see if creation date does not match revised date, for it to return true if the post was indeed revised. However, in the html page, it would always show the revised dates, regardless if it was revised or not. I talked to Tutor Support, and it turns out that revised date and created date are in milliseconds so it will always show that they do not equal. I asked my mentor for support and he suggested to use a timedelta to check the difference between created date and revised date. Using timedelta to 1 second, I managed to get this feature added successfully. 
 
 - When deploying, I was running into failed deploy errors on Heroku. It turns out that I had downloaded crispy-forms and had it in my installed apps in settings.py, but actually have never used crispy-forms anywhere. I ended up having to uninstall crispy-forms and remove it from installed apps and the deployment worked successfully.
 
@@ -554,7 +554,7 @@ Many bugs have been encountered while creating this project.
 
 - When first testing out the project after deploying, I noticed that the text would go over the container if the title or comments were very long strings. I managed to fix this by adding the Bootstrap class 'text-break'. 
 
-- After deploying, I realized the favicon does not show up on the deployed version. I then realized that the static file were not correctly uploaded. I fixed the syntax and now favicon is showing up on deployed website. 
+- After deploying, I realized the favicons do not show up on the deployed version. I then realized that the static imports for the favicons were not correctly added. I fixed the syntax and now favicons are showing up on deployed website. 
 
 
 ## Deployment
@@ -624,19 +624,19 @@ Many bugs have been encountered while creating this project.
     - MDN Web Docs was referred to many times on general Django instructions.
 
 - Code Institute - I Think Therefore I Blog project
-    - The 'I Think Therefore I Blog' project was referred to many times on the Django models, Django views, Django urls, the function to like and unlike posts, creating my HTML templates, and the idea of using Django's allauth for signing up, logging in, and logging out. The project was also referred to for the deployment process and how to install Cloudinary. 
+    - The 'I Think Therefore I Blog' project was referred to many times to get help with the Django models, Django views, Django urls, the function to like and unlike posts, creating my HTML templates, and the idea of using Django's allauth for signing up, logging in, and logging out. The project was also referred to for the deployment process and how to install Cloudinary. The code for liking and unliking posts was taken from this project, and cited. 
 
 - [Damian Jacob](https://github.com/damianjacob)
     - Damian Jacob has helped me a lot with this project. His codes for the Django views URL validation and JavaScript file validation were used and cited. 
 
 - [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial)
-    - This website was referred to when using Django's slug feature. Slug function codes were copied from this website and inserted into the models.py file. The codes are cited in models.py and admin.py.
+    - This website was referred to when using Django's slug feature. Slug function codes were copied from this website and inserted into the models.py and admin.py files. The codes are cited in models.py and admin.py.
 
 - [freeCodeCamp.org YouTube](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
     - This YouTube video uploaded by freeCodeCamp.org was referred to many times throughout the creation of this website.
 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
-    - This website was referred to many times when creating views.py file. This website was extremely helpful with detailed view, create view, delete view, and update view. 
+    - This website was referred to many times when creating the views.py file. This website was extremely helpful with detailed view, create view, delete view, and update view. 
 
 - [Django Documentation](https://www.djangoproject.com/)
     - The official Django documentation was referred to many times while creating this project. 
