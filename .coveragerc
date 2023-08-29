@@ -1,0 +1,12 @@
+[run]
+omit = 
+    */migrations/*
+    __init__.py
+    env.py
+    settings.py
+    manage.py
+    tests.py
+    
+[report]
+skip_covered = True
+skip_empty = True
