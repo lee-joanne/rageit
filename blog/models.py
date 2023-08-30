@@ -55,7 +55,7 @@ class Post(models.Model):
         Creates url from slug field. Code taken from
         https://learndjango.com/tutorials/django-slug-tutorial
         """
-        return reverse("postdetailedview", kwargs={"slug": self.slug})
+        return reverse("post_detailed_view", kwargs={"slug": self.slug})
 
     def save(self, *args, **kwargs):
         """
