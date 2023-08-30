@@ -3,12 +3,10 @@ from django.contrib.auth.models import User
 from blog.models import Post, Comment
 from django.utils import timezone
 from django.urls import reverse
-
-# Create your tests here.
+from django.template.defaultfilters import slugify
 
 
 class Test_Create_Post(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         test_user = User.objects.create_user(
@@ -18,7 +16,7 @@ class Test_Create_Post(TestCase):
         test_post = Post.objects.create(
             title="Post Title",
             slug='post-title',
-            author_id=1,
+            author_id=2,
             content='hello this is post',
             featured_image='placeholder',
             created_on=timezone.now(),
@@ -44,9 +42,26 @@ class Test_Create_Post(TestCase):
         post = Post.objects.get(id=1)
         post_comment_count = post.number_of_comments()
         self.assertEqual(post_comment_count, 1)
-        
+
     def test_get_absolute_url(self):
         post = Post.objects.get(id=1)
-        expected_url = reverse("post_detailed_view", kwargs={"slug": "post-title"})
+        expected_url = reverse(
+            "post_detailed_view", kwargs={
+                "slug": "post-title"})
         actual_url = post.get_absolute_url()
         self.assertEqual(actual_url, expected_url)
+
+    def test_slug_slugify(self):
+        post = Post(
+            title="Test Post",
+            content="This is a test post",
+            author_id=2)
+        post.save()
+        retrieved_post = Post.objects.get(id=post.id)
+        expected_slug = slugify(post.title)
+        self.assertEqual(retrieved_post.slug, expected_slug)
+
+    def test_string_comment(self):
+        comment = Comment.objects.get(id=1)
+        expected_string = f"Comment by {comment.author}"
+        self.assertEqual(comment.__str__(), expected_string)
