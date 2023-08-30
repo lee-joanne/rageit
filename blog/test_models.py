@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.template.defaultfilters import slugify
 
 
-class Test_Create_Post(TestCase):
+class Test_Models(TestCase):
     @classmethod
     def setUpTestData(cls):
         test_user = User.objects.create_user(
