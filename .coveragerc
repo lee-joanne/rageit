@@ -5,7 +5,8 @@ omit =
     env.py
     settings.py
     manage.py
-    tests.py
+    test_models.py
+    test_views.py
     
 [report]
 skip_covered = True
