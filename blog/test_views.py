@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from blog.models import Post, Comment
 from django.utils import timezone
@@ -6,6 +6,7 @@ from django.urls import reverse
 from .forms import CommentForm
 from django.shortcuts import get_object_or_404
 from django.http import Http404
+from .views import PostDetailedView
 
 
 class Test_Views(TestCase):
@@ -54,9 +55,17 @@ class Test_Views(TestCase):
         self.assertEqual(response.context['slug'], post.slug)
         self.assertTrue(response.context['liked'])
         
-    def test_get_object_or_404(self):
-        post = get_object_or_404(Post, slug='post-title')
-        with self.assertRaises(Http404):
-            post2 = get_object_or_404(Post, slug='non-existent')
-        response = self.client.get(reverse('post_detailed_view', args=[post.slug]))
-        self.assertEqual(response.status_code, 200)
+    def test_create_comment(self):
+        factory = RequestFactory()
+        post = Post.objects.get(id=1)
+        user = User.objects.get(username='test_user2')
+        request = factory.post(reverse('post_detailed_view', args=[post.slug]))
+        request.user = user 
+        valid_comment_data = {'content': 'Test comment content'}
+        request.POST = request.POST.copy()
+        request.POST.update(valid_comment_data)
+        initial_comment_count = Comment.objects.filter(post=post).count()
+        response = PostDetailedView.as_view()(request, slug=post.slug)
+        self.assertEqual(response.status_code, 200) 
+        final_comment_count = Comment.objects.filter(post=post).count()
+        self.assertEqual(final_comment_count, initial_comment_count + 1)
