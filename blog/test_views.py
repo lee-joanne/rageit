@@ -55,17 +55,31 @@ class Test_Views(TestCase):
         self.assertEqual(response.context['slug'], post.slug)
         self.assertTrue(response.context['liked'])
         
-    def test_create_comment(self):
+    def test_create_comment_valid_data(self):
         factory = RequestFactory()
         post = Post.objects.get(id=1)
         user = User.objects.get(username='test_user2')
         request = factory.post(reverse('post_detailed_view', args=[post.slug]))
-        request.user = user 
+        request.user = user
         valid_comment_data = {'content': 'Test comment content'}
-        request.POST = request.POST.copy()
-        request.POST.update(valid_comment_data)
-        initial_comment_count = Comment.objects.filter(post=post).count()
-        response = PostDetailedView.as_view()(request, slug=post.slug)
-        self.assertEqual(response.status_code, 200) 
-        final_comment_count = Comment.objects.filter(post=post).count()
-        self.assertEqual(final_comment_count, initial_comment_count + 1)
+
+        if valid_comment_data:
+            request.POST = request.POST.copy()
+            request.POST.update(valid_comment_data)
+            initial_comment_count = Comment.objects.filter(post=post).count()
+            response = PostDetailedView.as_view()(request, slug=post.slug)
+            self.assertEqual(response.status_code, 200)
+            final_comment_count = Comment.objects.filter(post=post).count()
+            self.assertEqual(final_comment_count, initial_comment_count + 1)
+
+    def test_create_comment_invalid_data(self):
+        factory = RequestFactory()
+        post = Post.objects.get(id=1)
+        user = User.objects.get(username='test_user2')
+        request = factory.post(reverse('post_detailed_view', args=[post.slug]))
+        request.user = user
+        invalid_comment_data = {}
+
+        if not invalid_comment_data:
+            response = PostDetailedView.as_view()(request, slug=post.slug)
+            self.assertEqual(response.status_code, 200)
