@@ -1,4 +1,4 @@
-from django.test import TestCase, RequestFactory
+from django.test import TestCase, RequestFactory, Client
 from django.contrib.auth.models import User
 from blog.models import Post, Comment
 from django.utils import timezone
@@ -10,13 +10,16 @@ from .views import PostDetailedView
 
 
 class Test_Views(TestCase):
-    @classmethod
-    def setUpTestData(cls):
-        test_user = User.objects.create_user(
-            username='test_user', password='123456')
-        test_user2 = User.objects.create_user(
-            username='test_user2', password='123456')
-        test_post = Post.objects.create(
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='test_user',
+            password='123456'
+        )
+        self.user2 = User.objects.create_user(
+            username='test_user2',
+            password='123456'
+        )
+        self.post = Post.objects.create(
             title="Post Title",
             slug='post-title',
             author_id=1,
@@ -24,7 +27,7 @@ class Test_Views(TestCase):
             featured_image='placeholder',
             created_on=timezone.now(),
             revised_on=timezone.now())
-        test_comment = Comment.objects.create(
+        self.comment = Comment.objects.create(
             post_id=1,
             author_id=2,
             content="hello this is comment",
@@ -43,7 +46,7 @@ class Test_Views(TestCase):
         self.assertTrue(post.likes.filter(id=user.id).exists())
         self.assertFalse(response.context['is_revised'])
 
-    def test_post_likes_exist_liked_true(self):
+    def test_if_liked_post_is_liked(self):
         post = Post.objects.get(id=1)
         user = User.objects.get(username='test_user2')
         self.client.login(username='test_user2', password='123456')  # Log in the user
@@ -79,7 +82,19 @@ class Test_Views(TestCase):
         request = factory.post(reverse('post_detailed_view', args=[post.slug]))
         request.user = user
         invalid_comment_data = {}
-
         if not invalid_comment_data:
             response = PostDetailedView.as_view()(request, slug=post.slug)
             self.assertEqual(response.status_code, 200)
+            
+    def test_create_post(self):
+        client = Client()
+        client.login(username='test_user', password='123456')
+        post_data = {
+            'title': 'Test Post',
+            'slug': 'test-post',
+            'content': 'This is a test post content.',
+            'author': self.user.id
+        }
+        response = client.post(reverse('create_post'), data=post_data)
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(Post.objects.filter(title='Test Post').exists())
