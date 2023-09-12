@@ -7,6 +7,7 @@ from .forms import CommentForm
 from django.shortcuts import get_object_or_404
 from django.http import Http404
 from .views import PostDetailedView
+from django.core.exceptions import PermissionDenied
 
 
 class Test_Views(TestCase):
@@ -98,3 +99,18 @@ class Test_Views(TestCase):
         response = client.post(reverse('create_post'), data=post_data)
         self.assertEqual(response.status_code, 302)
         self.assertTrue(Post.objects.filter(title='Test Post').exists())
+        
+    def test_edit_post_access(self):
+        client = Client()
+        client.login(username='test_user', password='123456')
+        url = reverse('update_post', kwargs={'slug': 'post-title'})
+        response = client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context['post'], self.post)
+
+    def test_edit_post_permission_denied(self):
+        client = Client()
+        client.login(username='test_user2', password='123456')
+        url = reverse('update_post', kwargs={'slug': 'post-title'})
+        response = client.get(url)
+        self.assertEqual(response.status_code, 403)
