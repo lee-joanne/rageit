@@ -1,4 +1,4 @@
-from django.test import TestCase, RequestFactory, Client
+from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from blog.models import Post, Comment
 from django.utils import timezone
@@ -50,7 +50,7 @@ class Test_Views(TestCase):
     def test_if_liked_post_is_liked(self):
         post = Post.objects.get(id=1)
         user = User.objects.get(username='test_user2')
-        self.client.login(username='test_user2', password='123456')  # Log in the user
+        self.client.login(username='test_user2', password='123456')
         post.likes.add(user)
         post.save()
         response = self.client.get(reverse('post_detailed_view', args=[post.slug]))
@@ -60,57 +60,47 @@ class Test_Views(TestCase):
         self.assertTrue(response.context['liked'])
         
     def test_create_comment_valid_data(self):
-        factory = RequestFactory()
         post = Post.objects.get(id=1)
         user = User.objects.get(username='test_user2')
-        request = factory.post(reverse('post_detailed_view', args=[post.slug]))
-        request.user = user
         valid_comment_data = {'content': 'Test comment content'}
-
-        if valid_comment_data:
-            request.POST = request.POST.copy()
-            request.POST.update(valid_comment_data)
-            initial_comment_count = Comment.objects.filter(post=post).count()
-            response = PostDetailedView.as_view()(request, slug=post.slug)
-            self.assertEqual(response.status_code, 200)
-            final_comment_count = Comment.objects.filter(post=post).count()
-            self.assertEqual(final_comment_count, initial_comment_count + 1)
+        self.client.login(username='test_user2', password='123456')
+        url = reverse('post_detailed_view', args=[post.slug])
+        response = self.client.post(url, valid_comment_data, follow=True)
+        self.assertEqual(response.status_code, 200)
+        final_comment_count = Comment.objects.filter(post=post).count()
+        self.assertEqual(final_comment_count, 2)
 
     def test_create_comment_invalid_data(self):
-        factory = RequestFactory()
         post = Post.objects.get(id=1)
         user = User.objects.get(username='test_user2')
-        request = factory.post(reverse('post_detailed_view', args=[post.slug]))
-        request.user = user
         invalid_comment_data = {}
-        if not invalid_comment_data:
-            response = PostDetailedView.as_view()(request, slug=post.slug)
-            self.assertEqual(response.status_code, 200)
+        self.client.login(username='test_user2', password='123456')
+        url = reverse('post_detailed_view', args=[post.slug])
+        response = self.client.post(url, invalid_comment_data, follow=True)
+        self.assertEqual(response.status_code, 200)
             
     def test_create_post(self):
-        client = Client()
-        client.login(username='test_user', password='123456')
+        self.client.login(username='test_user', password='123456')
         post_data = {
             'title': 'Test Post',
             'slug': 'test-post',
             'content': 'This is a test post content.',
             'author': self.user.id
         }
-        response = client.post(reverse('create_post'), data=post_data)
+        response = self.client.post(reverse('create_post'), data=post_data)
         self.assertEqual(response.status_code, 302)
         self.assertTrue(Post.objects.filter(title='Test Post').exists())
         
     def test_edit_post_access(self):
-        client = Client()
-        client.login(username='test_user', password='123456')
+        self.client.login(username='test_user', password='123456')
         url = reverse('update_post', kwargs={'slug': 'post-title'})
-        response = client.get(url)
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['post'], self.post)
 
     def test_edit_post_permission_denied(self):
-        client = Client()
-        client.login(username='test_user2', password='123456')
-        url = reverse('update_post', kwargs={'slug': 'post-title'})
-        response = client.get(url)
+        post = Post.objects.get(id=1)
+        self.client.login(username='test_user2', password='123456')
+        url = reverse('update_post', args=[post.slug])
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 403)
