@@ -21,6 +21,7 @@
     + [Programs Used](#programs-used)
   * [Testing](#testing)
     + [Validation Testing & Lighthouse](#validation-testing---lighthouse)
+    + [Automated Testing](#automated-testing)
     + [Manual Testing](#manual-testing)
     + [Bugs](#bugs)
   * [Deployment](#deployment)
@@ -533,6 +534,13 @@ This project was made primarily with Django.
     <summary>Screenshot of Lighthouse Score: Comment Delete</summary>
     <img src='documentation/lighthouse-commentdelete.png' alt='lighthouse score'>
     </details>
+
+### Automated Testing
+
+Thorough automated tests have been in place for 100% coverage using Coverage.
+Some Python files have been omitted and added to "coveragerc" such as env.py, settings.py, manage.py, etc.
+
+![Screenshot of 100% coverage score](documentation/coverage-score.png)
 
 ### Manual Testing
 
