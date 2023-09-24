@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from blog.models import Post, Comment
 from django.utils import timezone
 from django.urls import reverse
+from django.contrib import messages
 from .forms import CommentForm
 from django.shortcuts import get_object_or_404
 from django.http import Http404
@@ -125,4 +126,26 @@ class Test_Views(TestCase):
         url = reverse('delete_post', args=[post.slug])
         response = self.client.delete(url)
         self.assertEqual(response.status_code, 302)
-        self.assertFalse(Post.objects.filter(slug='test-post').exists()) 
+        self.assertFalse(Post.objects.filter(slug='test-post').exists())
+        
+    def test_create_post_like(self):
+        self.client.login(username='test_user2', password='123456')
+        post = Post.objects.get(id=1)
+        url = reverse('post_like', args=[post.slug])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, 302)
+        
+    def test_delete_post_like(self):
+        self.client.login(username='test_user', password='123456')
+        self.post.likes.add(self.user)
+        url = reverse('post_like', args=[self.post.slug])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(self.post.likes.filter(id=self.user.id).exists())
+        messages_list = list(messages.get_messages(response.wsgi_request))
+        self.assertEqual(len(messages_list), 1)
+        self.assertEqual(messages_list[0].tags, 'post_like alert-success')
+        self.assertEqual(
+            str(messages_list[0]),
+            '<i class="fa-solid fa-heart-crack"></i> You unraged this',
+        )
