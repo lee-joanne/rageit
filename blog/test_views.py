@@ -7,7 +7,7 @@ from django.contrib import messages
 from .forms import CommentForm
 from django.shortcuts import get_object_or_404
 from django.http import Http404
-from .views import PostDetailedView
+from .views import PostDetailedView, CommentDelete
 from django.core.exceptions import PermissionDenied
 
 
@@ -148,4 +148,21 @@ class Test_Views(TestCase):
         self.assertEqual(
             str(messages_list[0]),
             '<i class="fa-solid fa-heart-crack"></i> You unraged this',
+        )
+        
+    def test_get_success_url_message_return(self):
+        self.client.login(username='test_user2', password='123456')
+        post = Post.objects.get(id=1)
+        comment = Comment.objects.get(id=1)
+        view = CommentDelete()
+        view.object = comment
+        url = reverse('delete_comment', args=[self.comment.id])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, 302)
+        messages_list = list(messages.get_messages(response.wsgi_request))
+        self.assertEqual(len(messages_list), 1)
+        self.assertEqual(messages_list[0].tags, 'comment_deleted alert-success')
+        self.assertEqual(
+            str(messages_list[0]),
+            'Comment successfully deleted', 
         )
