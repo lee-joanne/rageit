@@ -104,3 +104,25 @@ class Test_Views(TestCase):
         url = reverse('update_post', args=[post.slug])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 403)
+        
+    def test_delete_view_permission_denied(self):
+        post = Post.objects.get(id=1)
+        self.client.login(username='test_user2', password='123456')
+        url = reverse('delete_post', args=[post.slug])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 403)
+        
+    def test_delete_view_render_page(self):
+        post = Post.objects.get(id=1)
+        self.client.login(username='test_user', password='123456')
+        url = reverse('delete_post', args=[post.slug])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        
+    def test_delete_successful(self):
+        self.client.login(username='test_user', password='123456')
+        post = Post.objects.get(id=1)
+        url = reverse('delete_post', args=[post.slug])
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(Post.objects.filter(slug='test-post').exists()) 
